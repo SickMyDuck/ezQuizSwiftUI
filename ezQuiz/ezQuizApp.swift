@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct ezQuizApp: App {
+    let viewModel = MenuViewModel()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MenuView(with: viewModel)
         }
     }
 }
