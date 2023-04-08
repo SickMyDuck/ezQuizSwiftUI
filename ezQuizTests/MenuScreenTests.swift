@@ -12,7 +12,7 @@ import Combine
 
 final class MenuScreenTests: XCTestCase {
 
-    func test_menuScreen_ShowThreeDifficultyOption() {
+    func test_ShowThreeDifficultyOption() {
 
         // GIVEN
         let viewModel = MenuViewModel()
@@ -26,7 +26,7 @@ final class MenuScreenTests: XCTestCase {
         XCTAssertEqual(expectedDifficulties, actualDifficulties)
     }
 
-    func test_menuScreen_SelectDifficulty() {
+    func test_SelectDifficulty() {
 
         // GIVEN
         let viewModel = MenuViewModel()

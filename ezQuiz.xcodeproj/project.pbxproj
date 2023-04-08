@@ -7,11 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5902DF5829E0D08E005046C6 /* FlagsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5902DF5729E0D08E005046C6 /* FlagsViewModel.swift */; };
+		5902DF5A29E0D0C1005046C6 /* FlagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5902DF5929E0D0C1005046C6 /* FlagsView.swift */; };
+		5902DF5E29E0D4AA005046C6 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5902DF5D29E0D4AA005046C6 /* Colors.swift */; };
+		5902DF6229E0E3DA005046C6 /* FlagsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5902DF6129E0E3D9005046C6 /* FlagsRouter.swift */; };
+		5902DF6429E0EC91005046C6 /* QuestionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5902DF6329E0EC91005046C6 /* QuestionsModel.swift */; };
+		5902DF6629E16278005046C6 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5902DF6529E16278005046C6 /* Loader.swift */; };
 		594EEB7629D636AE006F6AC7 /* MenuScreenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594EEB7529D636AE006F6AC7 /* MenuScreenTests.swift */; };
 		594EEB7A29D63793006F6AC7 /* Difficulties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594EEB7929D63793006F6AC7 /* Difficulties.swift */; };
 		594EEB7C29D63A38006F6AC7 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594EEB7B29D63A38006F6AC7 /* MenuViewModel.swift */; };
 		594EEB7E29D63BEC006F6AC7 /* MenuViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594EEB7D29D63BEC006F6AC7 /* MenuViewModelProtocol.swift */; };
 		594EEB8129D63CB4006F6AC7 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594EEB8029D63CB4006F6AC7 /* MenuView.swift */; };
+		5994C3D429DCCD65003F384F /* FlagsScreenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5994C3D329DCCD65003F384F /* FlagsScreenTests.swift */; };
+		5994C3D829DCD2E8003F384F /* MenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5994C3D729DCD2E8003F384F /* MenuRouter.swift */; };
 		59F9D1C129C3D014002374E2 /* ezQuizApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F9D1C029C3D014002374E2 /* ezQuizApp.swift */; };
 		59F9D1C329C3D014002374E2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F9D1C229C3D014002374E2 /* ContentView.swift */; };
 		59F9D1C529C3D01B002374E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59F9D1C429C3D01B002374E2 /* Assets.xcassets */; };
@@ -39,11 +47,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5902DF5729E0D08E005046C6 /* FlagsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagsViewModel.swift; sourceTree = "<group>"; };
+		5902DF5929E0D0C1005046C6 /* FlagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagsView.swift; sourceTree = "<group>"; };
+		5902DF5D29E0D4AA005046C6 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		5902DF6129E0E3D9005046C6 /* FlagsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagsRouter.swift; sourceTree = "<group>"; };
+		5902DF6329E0EC91005046C6 /* QuestionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsModel.swift; sourceTree = "<group>"; };
+		5902DF6529E16278005046C6 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		594EEB7529D636AE006F6AC7 /* MenuScreenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScreenTests.swift; sourceTree = "<group>"; };
 		594EEB7929D63793006F6AC7 /* Difficulties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Difficulties.swift; sourceTree = "<group>"; };
 		594EEB7B29D63A38006F6AC7 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		594EEB7D29D63BEC006F6AC7 /* MenuViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModelProtocol.swift; sourceTree = "<group>"; };
 		594EEB8029D63CB4006F6AC7 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		5994C3D329DCCD65003F384F /* FlagsScreenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagsScreenTests.swift; sourceTree = "<group>"; };
+		5994C3D729DCD2E8003F384F /* MenuRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRouter.swift; sourceTree = "<group>"; };
 		59F9D1BD29C3D014002374E2 /* ezQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ezQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59F9D1C029C3D014002374E2 /* ezQuizApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ezQuizApp.swift; sourceTree = "<group>"; };
 		59F9D1C229C3D014002374E2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -81,12 +97,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5902DF5629E0D072005046C6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5902DF5929E0D0C1005046C6 /* FlagsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5902DF5B29E0D480005046C6 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5902DF5F29E0E21F005046C6 /* Network */,
+				5902DF5C29E0D48F005046C6 /* Colors */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		5902DF5C29E0D48F005046C6 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				5902DF5D29E0D4AA005046C6 /* Colors.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		5902DF5F29E0E21F005046C6 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				5902DF6529E16278005046C6 /* Loader.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		5902DF6029E0E3CC005046C6 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				5902DF6129E0E3D9005046C6 /* FlagsRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		594EEB7729D63775006F6AC7 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				594EEB7F29D63C93006F6AC7 /* ViewModel */,
+				5994C3D629DCD2DA003F384F /* Router */,
+				5994C3D529DCD2B1003F384F /* Views */,
+				594EEB7F29D63C93006F6AC7 /* ViewModels */,
 				594EEB7829D6377F006F6AC7 /* Models */,
-				594EEB8029D63CB4006F6AC7 /* MenuView.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -99,13 +157,56 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		594EEB7F29D63C93006F6AC7 /* ViewModel */ = {
+		594EEB7F29D63C93006F6AC7 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				594EEB7D29D63BEC006F6AC7 /* MenuViewModelProtocol.swift */,
 				594EEB7B29D63A38006F6AC7 /* MenuViewModel.swift */,
 			);
-			path = ViewModel;
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5994C3D529DCD2B1003F384F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				594EEB8029D63CB4006F6AC7 /* MenuView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5994C3D629DCD2DA003F384F /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				5994C3D729DCD2E8003F384F /* MenuRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		5994C3D929DCDA88003F384F /* Flags */ = {
+			isa = PBXGroup;
+			children = (
+				5902DF6029E0E3CC005046C6 /* Router */,
+				5902DF5629E0D072005046C6 /* Views */,
+				5994C3DB29DCDA9E003F384F /* ViewModels */,
+				5994C3DA29DCDA92003F384F /* Models */,
+			);
+			path = Flags;
+			sourceTree = "<group>";
+		};
+		5994C3DA29DCDA92003F384F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5902DF6329E0EC91005046C6 /* QuestionsModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5994C3DB29DCDA9E003F384F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5902DF5729E0D08E005046C6 /* FlagsViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		59F9D1B429C3D013002374E2 = {
@@ -131,6 +232,8 @@
 		59F9D1BF29C3D014002374E2 /* ezQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				5902DF5B29E0D480005046C6 /* Helpers */,
+				5994C3D929DCDA88003F384F /* Flags */,
 				594EEB7729D63775006F6AC7 /* Menu */,
 				59F9D1C029C3D014002374E2 /* ezQuizApp.swift */,
 				59F9D1C229C3D014002374E2 /* ContentView.swift */,
@@ -153,6 +256,7 @@
 			children = (
 				59F9D1D129C3D01C002374E2 /* ezQuizTests.swift */,
 				594EEB7529D636AE006F6AC7 /* MenuScreenTests.swift */,
+				5994C3D329DCCD65003F384F /* FlagsScreenTests.swift */,
 			);
 			path = ezQuizTests;
 			sourceTree = "<group>";
@@ -296,9 +400,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5902DF5829E0D08E005046C6 /* FlagsViewModel.swift in Sources */,
+				5902DF5E29E0D4AA005046C6 /* Colors.swift in Sources */,
 				594EEB7A29D63793006F6AC7 /* Difficulties.swift in Sources */,
+				5902DF6429E0EC91005046C6 /* QuestionsModel.swift in Sources */,
+				5994C3D829DCD2E8003F384F /* MenuRouter.swift in Sources */,
 				594EEB8129D63CB4006F6AC7 /* MenuView.swift in Sources */,
+				5902DF5A29E0D0C1005046C6 /* FlagsView.swift in Sources */,
+				5902DF6229E0E3DA005046C6 /* FlagsRouter.swift in Sources */,
 				59F9D1C329C3D014002374E2 /* ContentView.swift in Sources */,
+				5902DF6629E16278005046C6 /* Loader.swift in Sources */,
 				59F9D1C129C3D014002374E2 /* ezQuizApp.swift in Sources */,
 				594EEB7C29D63A38006F6AC7 /* MenuViewModel.swift in Sources */,
 				594EEB7E29D63BEC006F6AC7 /* MenuViewModelProtocol.swift in Sources */,
@@ -310,6 +421,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				594EEB7629D636AE006F6AC7 /* MenuScreenTests.swift in Sources */,
+				5994C3D429DCCD65003F384F /* FlagsScreenTests.swift in Sources */,
 				59F9D1D229C3D01C002374E2 /* ezQuizTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
