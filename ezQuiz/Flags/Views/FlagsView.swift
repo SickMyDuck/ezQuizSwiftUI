@@ -15,8 +15,9 @@ struct FlagsView: View {
     var body: some View {
         Text("Hello, Wfrld!")
         Button("load") {
-            viewModel.loadQuestions()
+            viewModel.increaseQuestionsCounter()
         }
+        .onAppear(perform: viewModel.onAppear)
     }
 }
 

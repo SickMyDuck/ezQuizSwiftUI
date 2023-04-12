@@ -9,9 +9,9 @@ import Foundation
 
 enum Difficulties: String, CaseIterable {
     
-    case easy = "Easy"
-    case medium = "Medium"
-    case hard = "Hard"
+    case easy = "easy"
+    case medium = "medium"
+    case hard = "hard"
 
     var id: Int {
         switch self {

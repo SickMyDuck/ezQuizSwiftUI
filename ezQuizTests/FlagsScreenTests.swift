@@ -15,11 +15,11 @@ final class FlagScreenTests: XCTestCase {
     func test_checkCorrectAnswer() {
         // GIVEN
         let viewModel = FlagsViewModel()
-        let view = FlagsView(with: viewModel)
+        let view = FlagsView()
 
         // WHEN
         let expectedDifficulties: [Difficulties] = [.easy, .medium, .hard]
-        let actualDifficulties = view.viewModel.difficultyOptions
+        let actualDifficulties = view.$viewModel.difficultyOptions
 
         // THEN
         XCTAssertEqual(expectedDifficulties, actualDifficulties)
@@ -32,7 +32,7 @@ final class FlagScreenTests: XCTestCase {
     func test_loadQuestions() {
         let decoder = JSONDecoder()
         let data = String.mockQuestionsData.data(using: .utf8)!
-        XCTAssertNoThrow(try! decoder.decode(QuestionsModel.self, from: data))
+        XCTAssertNoThrow(try! decoder.decode(QuestionItemModel.self, from: data))
     }
 
 }
