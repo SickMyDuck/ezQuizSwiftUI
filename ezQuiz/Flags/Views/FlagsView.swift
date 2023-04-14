@@ -12,11 +12,54 @@ struct FlagsView: View {
 
     @ObservedObject var viewModel = FlagsViewModel()
 
+    let columns = [
+        GridItem(.flexible()),
+        GridItem(.flexible())
+    ]
+
     var body: some View {
-        Text("Hello, Wfrld!")
-        Button("load") {
-            viewModel.increaseQuestionsCounter()
+        VStack {
+            HStack {
+                Text("Finished!")
+                    .foregroundColor(.white)
+                    .opacity(viewModel.isQuizFinished ? 1 : 0)
+                Spacer()
+                Text(String(viewModel.correctAnswersCounter))
+                    .foregroundColor(.white)
+                    .frame(alignment: .center)
+            }
+            Spacer()
+            ZStack {
+                RoundedRectangle(cornerRadius: 10)
+                    .fill(Color.white)
+                    .frame(width: 250, height: 160)
+                Image(uiImage: viewModel.flagImage)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 240, height: 150)
+            }
+            .padding()
+
+            Spacer()
+
+            LazyVGrid(columns: columns) {
+                ForEach(viewModel.answers, id: \.self) { answer in
+                    Button(action: {
+                        viewModel.checkAnswer(answer: answer)
+                    }) {
+                        Text(answer)
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(Color.blue)
+                            .cornerRadius(10)
+                    }
+                    .disabled(viewModel.isAnswered)
+                }
+            }
+            .padding(.bottom, Paddings.large)
         }
+        .background(Color.black)
         .onAppear(perform: viewModel.onAppear)
     }
 }

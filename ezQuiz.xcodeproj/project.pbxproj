@@ -27,6 +27,11 @@
 		59F9D1D229C3D01C002374E2 /* ezQuizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F9D1D129C3D01C002374E2 /* ezQuizTests.swift */; };
 		59F9D1DC29C3D01D002374E2 /* ezQuizUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F9D1DB29C3D01D002374E2 /* ezQuizUITests.swift */; };
 		59F9D1DE29C3D01D002374E2 /* ezQuizUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F9D1DD29C3D01D002374E2 /* ezQuizUITestsLaunchTests.swift */; };
+		59FDBAB829E779400012C945 /* KingfisherImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FDBAB729E7793F0012C945 /* KingfisherImageLoader.swift */; };
+		59FDBABD29E8C1170012C945 /* Paddings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FDBABC29E8C1170012C945 /* Paddings.swift */; };
+		616B093CDBB3ADFAA20C5622 /* Pods_ezQuiz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 188C498C4B4D18BF9D05B2CB /* Pods_ezQuiz.framework */; };
+		76A5D78EF8321C360B9A997D /* Pods_ezQuizTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9311A455BDE0F67FC9F3DE2 /* Pods_ezQuizTests.framework */; };
+		9C0FC95C5682A32932C5D851 /* Pods_ezQuiz_ezQuizUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF7D9AEB7CE3469431DC16F3 /* Pods_ezQuiz_ezQuizUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +52,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0FDB0FC88621DDDE932F63AC /* Pods-ezQuiz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ezQuiz.release.xcconfig"; path = "Target Support Files/Pods-ezQuiz/Pods-ezQuiz.release.xcconfig"; sourceTree = "<group>"; };
+		188C498C4B4D18BF9D05B2CB /* Pods_ezQuiz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ezQuiz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		19C7DDBC2197A4BEABD86AF1 /* Pods-ezQuizTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ezQuizTests.debug.xcconfig"; path = "Target Support Files/Pods-ezQuizTests/Pods-ezQuizTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5902DF5729E0D08E005046C6 /* FlagsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagsViewModel.swift; sourceTree = "<group>"; };
 		5902DF5929E0D0C1005046C6 /* FlagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagsView.swift; sourceTree = "<group>"; };
 		5902DF5D29E0D4AA005046C6 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
@@ -70,6 +78,14 @@
 		59F9D1D729C3D01C002374E2 /* ezQuizUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ezQuizUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		59F9D1DB29C3D01D002374E2 /* ezQuizUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ezQuizUITests.swift; sourceTree = "<group>"; };
 		59F9D1DD29C3D01D002374E2 /* ezQuizUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ezQuizUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		59FDBAB729E7793F0012C945 /* KingfisherImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingfisherImageLoader.swift; sourceTree = "<group>"; };
+		59FDBABC29E8C1170012C945 /* Paddings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paddings.swift; sourceTree = "<group>"; };
+		69DDECBA71EB5F39056FBF38 /* Pods-ezQuizTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ezQuizTests.release.xcconfig"; path = "Target Support Files/Pods-ezQuizTests/Pods-ezQuizTests.release.xcconfig"; sourceTree = "<group>"; };
+		6F686B3CE54D1BB6C7B871A2 /* Pods-ezQuiz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ezQuiz.debug.xcconfig"; path = "Target Support Files/Pods-ezQuiz/Pods-ezQuiz.debug.xcconfig"; sourceTree = "<group>"; };
+		81AA8009BD88FD1B6EB08C0A /* Pods-ezQuiz-ezQuizUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ezQuiz-ezQuizUITests.release.xcconfig"; path = "Target Support Files/Pods-ezQuiz-ezQuizUITests/Pods-ezQuiz-ezQuizUITests.release.xcconfig"; sourceTree = "<group>"; };
+		84596FF3DF8982E3F531CCFE /* Pods-ezQuiz-ezQuizUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ezQuiz-ezQuizUITests.debug.xcconfig"; path = "Target Support Files/Pods-ezQuiz-ezQuizUITests/Pods-ezQuiz-ezQuizUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B9311A455BDE0F67FC9F3DE2 /* Pods_ezQuizTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ezQuizTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF7D9AEB7CE3469431DC16F3 /* Pods_ezQuiz_ezQuizUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ezQuiz_ezQuizUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				616B093CDBB3ADFAA20C5622 /* Pods_ezQuiz.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76A5D78EF8321C360B9A997D /* Pods_ezQuizTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C0FC95C5682A32932C5D851 /* Pods_ezQuiz_ezQuizUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				5902DF5D29E0D4AA005046C6 /* Colors.swift */,
+				59FDBABC29E8C1170012C945 /* Paddings.swift */,
 			);
 			path = Colors;
 			sourceTree = "<group>";
@@ -126,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				5902DF6529E16278005046C6 /* Loader.swift */,
+				59FDBAB729E7793F0012C945 /* KingfisherImageLoader.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -216,6 +237,8 @@
 				59F9D1D029C3D01C002374E2 /* ezQuizTests */,
 				59F9D1DA29C3D01D002374E2 /* ezQuizUITests */,
 				59F9D1BE29C3D014002374E2 /* Products */,
+				6654114222B06CD640C5A5E1 /* Pods */,
+				77A0A8A460E2185B69D4B4D2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -270,6 +293,29 @@
 			path = ezQuizUITests;
 			sourceTree = "<group>";
 		};
+		6654114222B06CD640C5A5E1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6F686B3CE54D1BB6C7B871A2 /* Pods-ezQuiz.debug.xcconfig */,
+				0FDB0FC88621DDDE932F63AC /* Pods-ezQuiz.release.xcconfig */,
+				84596FF3DF8982E3F531CCFE /* Pods-ezQuiz-ezQuizUITests.debug.xcconfig */,
+				81AA8009BD88FD1B6EB08C0A /* Pods-ezQuiz-ezQuizUITests.release.xcconfig */,
+				19C7DDBC2197A4BEABD86AF1 /* Pods-ezQuizTests.debug.xcconfig */,
+				69DDECBA71EB5F39056FBF38 /* Pods-ezQuizTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		77A0A8A460E2185B69D4B4D2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				188C498C4B4D18BF9D05B2CB /* Pods_ezQuiz.framework */,
+				CF7D9AEB7CE3469431DC16F3 /* Pods_ezQuiz_ezQuizUITests.framework */,
+				B9311A455BDE0F67FC9F3DE2 /* Pods_ezQuizTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -277,9 +323,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 59F9D1E129C3D01D002374E2 /* Build configuration list for PBXNativeTarget "ezQuiz" */;
 			buildPhases = (
+				51D12696FE47980286670EB8 /* [CP] Check Pods Manifest.lock */,
 				59F9D1B929C3D013002374E2 /* Sources */,
 				59F9D1BA29C3D013002374E2 /* Frameworks */,
 				59F9D1BB29C3D013002374E2 /* Resources */,
+				10405A093CBC960FA1EEEFBC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -294,6 +342,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 59F9D1E429C3D01D002374E2 /* Build configuration list for PBXNativeTarget "ezQuizTests" */;
 			buildPhases = (
+				F1E52E464ABBDF28920DF6F0 /* [CP] Check Pods Manifest.lock */,
 				59F9D1C929C3D01C002374E2 /* Sources */,
 				59F9D1CA29C3D01C002374E2 /* Frameworks */,
 				59F9D1CB29C3D01C002374E2 /* Resources */,
@@ -312,9 +361,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 59F9D1E729C3D01D002374E2 /* Build configuration list for PBXNativeTarget "ezQuizUITests" */;
 			buildPhases = (
+				51F2E1571B3E0DC398C186BC /* [CP] Check Pods Manifest.lock */,
 				59F9D1D329C3D01C002374E2 /* Sources */,
 				59F9D1D429C3D01C002374E2 /* Frameworks */,
 				59F9D1D529C3D01C002374E2 /* Resources */,
+				E4C3F5122ABDB81F1FA0C84E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -395,6 +446,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		10405A093CBC960FA1EEEFBC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ezQuiz/Pods-ezQuiz-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ezQuiz/Pods-ezQuiz-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ezQuiz/Pods-ezQuiz-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		51D12696FE47980286670EB8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ezQuiz-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		51F2E1571B3E0DC398C186BC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ezQuiz-ezQuizUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E4C3F5122ABDB81F1FA0C84E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ezQuiz-ezQuizUITests/Pods-ezQuiz-ezQuizUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ezQuiz-ezQuizUITests/Pods-ezQuiz-ezQuizUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ezQuiz-ezQuizUITests/Pods-ezQuiz-ezQuizUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F1E52E464ABBDF28920DF6F0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ezQuizTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		59F9D1B929C3D013002374E2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -409,9 +563,11 @@
 				5902DF5A29E0D0C1005046C6 /* FlagsView.swift in Sources */,
 				5902DF6229E0E3DA005046C6 /* FlagsRouter.swift in Sources */,
 				59F9D1C329C3D014002374E2 /* ContentView.swift in Sources */,
+				59FDBABD29E8C1170012C945 /* Paddings.swift in Sources */,
 				5902DF6629E16278005046C6 /* Loader.swift in Sources */,
 				59F9D1C129C3D014002374E2 /* ezQuizApp.swift in Sources */,
 				594EEB7C29D63A38006F6AC7 /* MenuViewModel.swift in Sources */,
+				59FDBAB829E779400012C945 /* KingfisherImageLoader.swift in Sources */,
 				594EEB7E29D63BEC006F6AC7 /* MenuViewModelProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -567,6 +723,7 @@
 		};
 		59F9D1E229C3D01D002374E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F686B3CE54D1BB6C7B871A2 /* Pods-ezQuiz.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -596,6 +753,7 @@
 		};
 		59F9D1E329C3D01D002374E2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0FDB0FC88621DDDE932F63AC /* Pods-ezQuiz.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -625,6 +783,7 @@
 		};
 		59F9D1E529C3D01D002374E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19C7DDBC2197A4BEABD86AF1 /* Pods-ezQuizTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -645,6 +804,7 @@
 		};
 		59F9D1E629C3D01D002374E2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69DDECBA71EB5F39056FBF38 /* Pods-ezQuizTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -665,6 +825,7 @@
 		};
 		59F9D1E829C3D01D002374E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84596FF3DF8982E3F531CCFE /* Pods-ezQuiz-ezQuizUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -683,6 +844,7 @@
 		};
 		59F9D1E929C3D01D002374E2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81AA8009BD88FD1B6EB08C0A /* Pods-ezQuiz-ezQuizUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
