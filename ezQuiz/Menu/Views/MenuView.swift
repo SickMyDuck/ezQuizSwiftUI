@@ -25,17 +25,17 @@ struct MenuView<ViewModel: MenuViewModelProtocol> : View {
                             Text(difficulty.rawValue)
                         }
                     }
-                    .navigationTitle("Choose difficulty")
-                    .navigationBarTitleDisplayMode(.inline)
                 }
             }
         }
+        .navigationBarHidden(true)
+        .navigationBarBackButtonHidden(true)
     }
 }
 
 struct MenuView_Previews: PreviewProvider {
     static var previews: some View {
-        let viewModel = MenuViewModel()
+        let viewModel = MenuViewModel(user: "test")
         MenuView(with: viewModel)
     }
 }

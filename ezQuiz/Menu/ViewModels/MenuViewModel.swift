@@ -12,6 +12,11 @@ class MenuViewModel {
 
     @Published var selectedDifficulty: Difficulties?
     let difficultyOptions = Difficulties.allCases
+    var user = ""
+
+    init(user: String)  {
+        self.user = user
+    }
 
     func selectDifficulty(_ difficulty: Difficulties) {
         selectedDifficulty = difficulty

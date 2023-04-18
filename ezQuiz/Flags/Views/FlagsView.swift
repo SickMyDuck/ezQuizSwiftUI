@@ -21,17 +21,20 @@ struct FlagsView: View {
         VStack {
             HStack {
                 Text("Finished!")
+                    .font(Fonts.roboto)
                     .foregroundColor(.white)
                     .opacity(viewModel.isQuizFinished ? 1 : 0)
+                    .animation(.easeInOut)
                 Spacer()
-                Text(String(viewModel.correctAnswersCounter))
+                Text("\(viewModel.correctAnswersCounter)/\(viewModel.questionsCounter)")
+                    .font(Fonts.roboto)
                     .foregroundColor(.white)
                     .frame(alignment: .center)
             }
             Spacer()
             ZStack {
                 RoundedRectangle(cornerRadius: 10)
-                    .fill(Color.white)
+                    .fill(Color.gray)
                     .frame(width: 250, height: 160)
                 Image(uiImage: viewModel.flagImage)
                         .resizable()
@@ -48,10 +51,10 @@ struct FlagsView: View {
                         viewModel.checkAnswer(answer: answer)
                     }) {
                         Text(answer)
-                            .foregroundColor(.white)
+                            .foregroundColor(viewModel.buttonForegroundColor)
                             .frame(maxWidth: .infinity)
                             .padding()
-                            .background(Color.blue)
+                            .background(viewModel.buttonBackgroundColor)
                             .cornerRadius(10)
                     }
                     .disabled(viewModel.isAnswered)
@@ -59,8 +62,10 @@ struct FlagsView: View {
             }
             .padding(.bottom, Paddings.large)
         }
+        .navigationBarBackButtonHidden(true)
         .background(Color.black)
         .onAppear(perform: viewModel.onAppear)
+
     }
 }
 

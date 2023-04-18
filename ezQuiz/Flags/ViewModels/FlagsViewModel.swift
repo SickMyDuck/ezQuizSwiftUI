@@ -7,6 +7,7 @@
 
 import UIKit
 import Combine
+import SwiftUI
 
 protocol FlagsViewModelProtocol: ObservableObject {
     var flagUrl: URL? { get }
@@ -16,6 +17,7 @@ protocol FlagsViewModelProtocol: ObservableObject {
     var correctAnswersCounter: Int { get }
     var isAnswered: Bool { get }
     var isQuizFinished: Bool { get }
+    var questionsCounter: Int { get }
 
     func onAppear()
     func checkAnswer(answer: String)
@@ -34,6 +36,9 @@ class FlagsViewModel: FlagsViewModelProtocol {
     @Published var isAnswered: Bool = false
     @Published var questionsCounter: Int = 0
     @Published var isQuizFinished: Bool = false
+    @Published var buttonBackgroundColor: Color = Color.blue
+    @Published var buttonForegroundColor: Color = Color.white
+
 
 
     @Published private var questions: [Question] = []
@@ -53,7 +58,11 @@ class FlagsViewModel: FlagsViewModelProtocol {
     func checkAnswer(answer: String) {
         if answer == correctAnswer {
             correctAnswersCounter += 1
+            buttonBackgroundColor = Color.green
+        } else {
+            buttonBackgroundColor = Color.red
         }
+
         isAnswered = true
 
         startNewQuestion()
@@ -124,7 +133,7 @@ class FlagsViewModel: FlagsViewModelProtocol {
                         self?.isAnswered = false
                     }
                 }
-
+                self?.buttonBackgroundColor = Color.blue
             }
             .store(in: &cancellables)
 

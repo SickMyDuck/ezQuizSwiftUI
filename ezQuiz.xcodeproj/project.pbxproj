@@ -20,6 +20,11 @@
 		594EEB8129D63CB4006F6AC7 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594EEB8029D63CB4006F6AC7 /* MenuView.swift */; };
 		5994C3D429DCCD65003F384F /* FlagsScreenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5994C3D329DCCD65003F384F /* FlagsScreenTests.swift */; };
 		5994C3D829DCD2E8003F384F /* MenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5994C3D729DCD2E8003F384F /* MenuRouter.swift */; };
+		59D82F5B29EDF0C7009F72AF /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D82F5A29EDF0C7009F72AF /* UserView.swift */; };
+		59D82F5E29EDF32F009F72AF /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D82F5D29EDF32F009F72AF /* WelcomeView.swift */; };
+		59D82F6029EDF4B2009F72AF /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D82F5F29EDF4B2009F72AF /* StartView.swift */; };
+		59D82F6229EDF4E5009F72AF /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D82F6129EDF4E5009F72AF /* UserViewModel.swift */; };
+		59D82F6429EDF552009F72AF /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D82F6329EDF552009F72AF /* WelcomeViewModel.swift */; };
 		59F9D1C129C3D014002374E2 /* ezQuizApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F9D1C029C3D014002374E2 /* ezQuizApp.swift */; };
 		59F9D1C329C3D014002374E2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F9D1C229C3D014002374E2 /* ContentView.swift */; };
 		59F9D1C529C3D01B002374E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59F9D1C429C3D01B002374E2 /* Assets.xcassets */; };
@@ -29,6 +34,7 @@
 		59F9D1DE29C3D01D002374E2 /* ezQuizUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F9D1DD29C3D01D002374E2 /* ezQuizUITestsLaunchTests.swift */; };
 		59FDBAB829E779400012C945 /* KingfisherImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FDBAB729E7793F0012C945 /* KingfisherImageLoader.swift */; };
 		59FDBABD29E8C1170012C945 /* Paddings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FDBABC29E8C1170012C945 /* Paddings.swift */; };
+		59FDBABF29EA0C7B0012C945 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FDBABE29EA0C7B0012C945 /* Fonts.swift */; };
 		616B093CDBB3ADFAA20C5622 /* Pods_ezQuiz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 188C498C4B4D18BF9D05B2CB /* Pods_ezQuiz.framework */; };
 		76A5D78EF8321C360B9A997D /* Pods_ezQuizTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9311A455BDE0F67FC9F3DE2 /* Pods_ezQuizTests.framework */; };
 		9C0FC95C5682A32932C5D851 /* Pods_ezQuiz_ezQuizUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF7D9AEB7CE3469431DC16F3 /* Pods_ezQuiz_ezQuizUITests.framework */; };
@@ -68,6 +74,11 @@
 		594EEB8029D63CB4006F6AC7 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		5994C3D329DCCD65003F384F /* FlagsScreenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagsScreenTests.swift; sourceTree = "<group>"; };
 		5994C3D729DCD2E8003F384F /* MenuRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRouter.swift; sourceTree = "<group>"; };
+		59D82F5A29EDF0C7009F72AF /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		59D82F5D29EDF32F009F72AF /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		59D82F5F29EDF4B2009F72AF /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		59D82F6129EDF4E5009F72AF /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		59D82F6329EDF552009F72AF /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 		59F9D1BD29C3D014002374E2 /* ezQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ezQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59F9D1C029C3D014002374E2 /* ezQuizApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ezQuizApp.swift; sourceTree = "<group>"; };
 		59F9D1C229C3D014002374E2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -80,6 +91,7 @@
 		59F9D1DD29C3D01D002374E2 /* ezQuizUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ezQuizUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		59FDBAB729E7793F0012C945 /* KingfisherImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingfisherImageLoader.swift; sourceTree = "<group>"; };
 		59FDBABC29E8C1170012C945 /* Paddings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paddings.swift; sourceTree = "<group>"; };
+		59FDBABE29EA0C7B0012C945 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		69DDECBA71EB5F39056FBF38 /* Pods-ezQuizTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ezQuizTests.release.xcconfig"; path = "Target Support Files/Pods-ezQuizTests/Pods-ezQuizTests.release.xcconfig"; sourceTree = "<group>"; };
 		6F686B3CE54D1BB6C7B871A2 /* Pods-ezQuiz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ezQuiz.debug.xcconfig"; path = "Target Support Files/Pods-ezQuiz/Pods-ezQuiz.debug.xcconfig"; sourceTree = "<group>"; };
 		81AA8009BD88FD1B6EB08C0A /* Pods-ezQuiz-ezQuizUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ezQuiz-ezQuizUITests.release.xcconfig"; path = "Target Support Files/Pods-ezQuiz-ezQuizUITests/Pods-ezQuiz-ezQuizUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -138,6 +150,7 @@
 			children = (
 				5902DF5D29E0D4AA005046C6 /* Colors.swift */,
 				59FDBABC29E8C1170012C945 /* Paddings.swift */,
+				59FDBABE29EA0C7B0012C945 /* Fonts.swift */,
 			);
 			path = Colors;
 			sourceTree = "<group>";
@@ -230,6 +243,25 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		59D82F5729EDEF89009F72AF /* User */ = {
+			isa = PBXGroup;
+			children = (
+				59D82F5A29EDF0C7009F72AF /* UserView.swift */,
+				59D82F6129EDF4E5009F72AF /* UserViewModel.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		59D82F5C29EDF2CE009F72AF /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				59D82F5D29EDF32F009F72AF /* WelcomeView.swift */,
+				59D82F5F29EDF4B2009F72AF /* StartView.swift */,
+				59D82F6329EDF552009F72AF /* WelcomeViewModel.swift */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
 		59F9D1B429C3D013002374E2 = {
 			isa = PBXGroup;
 			children = (
@@ -255,6 +287,8 @@
 		59F9D1BF29C3D014002374E2 /* ezQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				59D82F5C29EDF2CE009F72AF /* Welcome */,
+				59D82F5729EDEF89009F72AF /* User */,
 				5902DF5B29E0D480005046C6 /* Helpers */,
 				5994C3D929DCDA88003F384F /* Flags */,
 				594EEB7729D63775006F6AC7 /* Menu */,
@@ -554,21 +588,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59FDBABF29EA0C7B0012C945 /* Fonts.swift in Sources */,
 				5902DF5829E0D08E005046C6 /* FlagsViewModel.swift in Sources */,
 				5902DF5E29E0D4AA005046C6 /* Colors.swift in Sources */,
 				594EEB7A29D63793006F6AC7 /* Difficulties.swift in Sources */,
 				5902DF6429E0EC91005046C6 /* QuestionItemModel.swift in Sources */,
 				5994C3D829DCD2E8003F384F /* MenuRouter.swift in Sources */,
 				594EEB8129D63CB4006F6AC7 /* MenuView.swift in Sources */,
+				59D82F5B29EDF0C7009F72AF /* UserView.swift in Sources */,
 				5902DF5A29E0D0C1005046C6 /* FlagsView.swift in Sources */,
 				5902DF6229E0E3DA005046C6 /* FlagsRouter.swift in Sources */,
+				59D82F6029EDF4B2009F72AF /* StartView.swift in Sources */,
 				59F9D1C329C3D014002374E2 /* ContentView.swift in Sources */,
 				59FDBABD29E8C1170012C945 /* Paddings.swift in Sources */,
 				5902DF6629E16278005046C6 /* Loader.swift in Sources */,
 				59F9D1C129C3D014002374E2 /* ezQuizApp.swift in Sources */,
 				594EEB7C29D63A38006F6AC7 /* MenuViewModel.swift in Sources */,
+				59D82F6429EDF552009F72AF /* WelcomeViewModel.swift in Sources */,
 				59FDBAB829E779400012C945 /* KingfisherImageLoader.swift in Sources */,
 				594EEB7E29D63BEC006F6AC7 /* MenuViewModelProtocol.swift in Sources */,
+				59D82F6229EDF4E5009F72AF /* UserViewModel.swift in Sources */,
+				59D82F5E29EDF32F009F72AF /* WelcomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -657,7 +697,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -711,7 +751,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -733,11 +773,13 @@
 				DEVELOPMENT_TEAM = GR3FLKSKAU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Ez flags";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -763,11 +805,13 @@
 				DEVELOPMENT_TEAM = GR3FLKSKAU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Ez flags";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

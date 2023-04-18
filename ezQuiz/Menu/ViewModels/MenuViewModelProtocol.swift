@@ -8,6 +8,7 @@
 import Foundation
 
 protocol MenuViewModelProtocol: ObservableObject {
+    var user: String { get }
     var selectedDifficulty: Difficulties? { get }
     var difficultyOptions: [Difficulties] { get }
 
