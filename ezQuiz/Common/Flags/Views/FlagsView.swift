@@ -13,7 +13,6 @@ struct FlagsView: View {
     @ObservedObject var viewModel = FlagsViewModel()
 
     let columns = [
-        GridItem(.flexible()),
         GridItem(.flexible())
     ]
 

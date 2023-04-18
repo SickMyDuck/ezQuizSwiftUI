@@ -1,21 +1,21 @@
 //
-//  MenuView.swift
+//  DifficultyView.swift
 //  ezQuiz
 //
-//  Created by Ruslan Sadritdinov on 31.03.2023.
+//  Created by Ruslan Sadritdinov on 18.04.2023.
 //
 
 import SwiftUI
 import Combine
 
-struct MenuView<ViewModel: MenuViewModelProtocol> : View {
+struct DifficultyView<ViewModel: DifficultyViewModelProtocol> : View {
 
     @ObservedObject var viewModel: ViewModel
 
     init(with viewModel: ViewModel) {
         self.viewModel = viewModel
     }
-    
+
     var body: some View {
         ZStack{
             NavigationView {
@@ -33,9 +33,9 @@ struct MenuView<ViewModel: MenuViewModelProtocol> : View {
     }
 }
 
-struct MenuView_Previews: PreviewProvider {
+struct DifficultyView_Previews: PreviewProvider {
     static var previews: some View {
-        let viewModel = MenuViewModel(user: "test")
-        MenuView(with: viewModel)
+        let viewModel = DifficultyViewModel()
+        DifficultyView(with: viewModel)
     }
 }

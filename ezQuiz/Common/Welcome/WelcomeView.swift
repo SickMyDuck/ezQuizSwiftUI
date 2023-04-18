@@ -20,7 +20,7 @@ struct WelcomeView: View {
                     .padding()
 
                 NavigationLink(
-                    destination: MenuView(with: MenuViewModel(user: viewModel.user)),
+                    destination: MenuView(viewModel: MenuViewModel(user: viewModel.user)),
                     label: {
                         Text("Start Quiz")
                             .foregroundColor(.white)

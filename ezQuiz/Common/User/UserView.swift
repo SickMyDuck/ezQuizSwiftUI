@@ -19,8 +19,7 @@ struct UserView: View {
                 TextField("Enter your name", text: $viewModel.user)
                     .padding()
 
-                let menuViewModel = MenuViewModel(user: viewModel.user)
-                NavigationLink(destination: MenuView(with: menuViewModel), isActive: $showNextView) {
+                NavigationLink(destination: MenuView(viewModel: MenuViewModel(user: viewModel.user)), isActive: $showNextView) {
                     EmptyView()
                 }
 
