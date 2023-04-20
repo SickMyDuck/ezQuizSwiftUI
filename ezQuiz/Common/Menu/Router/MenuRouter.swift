@@ -14,9 +14,6 @@ protocol MenuRouterProtocol {
 
 class MenuRouter {
      func navigateTo<Destination: View>(destination: Destination) {
-        let view = UIHostingController(rootView: destination)
-        let navigationController = UINavigationController(rootViewController: view)
-        UIApplication.shared.windows.first?.rootViewController = navigationController
-        UIApplication.shared.windows.first?.makeKeyAndVisible()
+         Coordinator.navigateTo(destination: destination)
     }
 }

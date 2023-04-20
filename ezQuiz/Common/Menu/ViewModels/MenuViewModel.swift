@@ -10,14 +10,15 @@ import SwiftUI
 
 class MenuViewModel: MenuViewModelProtocol {
 
-    var router = MenuRouter()
     var user: String
 
     let items: [MenuItem] = [
         MenuItem(title: "Quiz", destination: AnyView(FlagsView())),
-        // MenuItem(title: "Settings", destination: AnyView(SettingsView())),
+        MenuItem(title: "Profile", destination: AnyView(ProfileView())),
         MenuItem(title: "About", destination: AnyView(AboutView()))
     ]
+    
+    private let router = MenuRouter()
 
     init(user: String) {
         self.user = user

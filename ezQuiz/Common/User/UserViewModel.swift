@@ -20,24 +20,19 @@ class UserViewModel: UserViewModelProtocol, ObservableObject {
 
     @Published var user = ""
 
-    func saveUser() {
-        UserDefaults.standard.set(user, forKey: "user")
-    }
-
-    func getSavedUser() -> String? {
-        return UserDefaults.standard.string(forKey: "user")
-    }
-
     init() {
         if let savedUser = getSavedUser() {
             user = savedUser
             isUserFound = true
         }
     }
-
-    private var isValid = false {
-        didSet {
-            objectWillChange.send()
-        }
+    
+    func saveUser() {
+        User.saveUser(user: user)
     }
+
+    func getSavedUser() -> String? {
+        User.getSavedUser()
+    }
+
 }

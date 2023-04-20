@@ -12,6 +12,7 @@ struct ezQuizApp: App {
     var body: some Scene {
         WindowGroup {
             StartView()
+                .font(Fonts.roboto)
         }
     }
 }
