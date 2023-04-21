@@ -9,10 +9,10 @@ import Foundation
 import SwiftUI
 
 protocol MenuRouterProtocol {
-
+    func navigateTo<Destination: View>(destination: Destination)
 }
 
-class MenuRouter {
+class MenuRouter: MenuRouterProtocol {
      func navigateTo<Destination: View>(destination: Destination) {
          Coordinator.navigateTo(destination: destination)
     }

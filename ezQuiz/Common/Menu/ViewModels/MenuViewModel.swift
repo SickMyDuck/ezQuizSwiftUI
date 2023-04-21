@@ -10,6 +10,7 @@ import SwiftUI
 
 class MenuViewModel: MenuViewModelProtocol {
 
+    @Published var showProfileView: Bool = false
     var user: String
 
     let items: [MenuItem] = [

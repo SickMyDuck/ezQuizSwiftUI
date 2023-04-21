@@ -11,14 +11,17 @@ import Combine
 protocol UserViewModelProtocol {
     var isUserFound: Bool { get }
     var user: String { get }
+    var showNextView : Bool { get }
 }
 
 class UserViewModel: UserViewModelProtocol, ObservableObject {
 
     var isUserFound: Bool = false
-    private var cancellables = Set<AnyCancellable>()
 
     @Published var user = ""
+    @Published var showNextView = false
+
+    private var cancellables = Set<AnyCancellable>()
 
     init() {
         if let savedUser = getSavedUser() {

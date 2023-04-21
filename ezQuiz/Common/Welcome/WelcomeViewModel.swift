@@ -14,6 +14,7 @@ class WelcomeViewModel: ObservableObject {
 
     @Published var user = ""
     @Published var isNameEntered = false
+    @Published var showMenuView = false
 
     init() {
         checkIfNameEntered()
@@ -24,10 +25,6 @@ class WelcomeViewModel: ObservableObject {
             user = name
             isNameEntered = true
         }
-    }
-
-    func deleteUser() {
-        userDefaults.removeObject(forKey: UserDefaultsKeys.user.rawValue)
     }
 
     enum UserDefaultsKeys: String {

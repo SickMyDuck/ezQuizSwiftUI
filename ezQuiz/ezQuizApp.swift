@@ -9,10 +9,12 @@ import SwiftUI
 
 @main
 struct ezQuizApp: App {
+
     var body: some Scene {
         WindowGroup {
             StartView()
                 .font(Fonts.roboto)
+                .preferredColorScheme(.dark)
         }
     }
 }

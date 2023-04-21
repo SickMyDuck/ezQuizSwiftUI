@@ -25,9 +25,6 @@ protocol FlagsViewModelProtocol: ObservableObject {
 
 class FlagsViewModel: FlagsViewModelProtocol {
 
-    private let imageLoader: ImageLoader
-
-
     @Published var flagUrl: URL?
     @Published var answers: [String] = []
     @Published var correctAnswer: String = ""
@@ -38,12 +35,14 @@ class FlagsViewModel: FlagsViewModelProtocol {
     @Published var isQuizFinished: Bool = false
     @Published var buttonBackgroundColor: Color = Color.blue
     @Published var buttonForegroundColor: Color = Color.white
+    @Published var isMenuVisible: Bool = false
 
 
 
     @Published private var questions: [Question] = []
     @Published private var currentQuestion: Question?
-
+    private let imageLoader: ImageLoader
+    private let router = FlagsRouter()
 
     private var cancellables: Set<AnyCancellable> = .init()
 
@@ -152,4 +151,12 @@ class FlagsViewModel: FlagsViewModelProtocol {
         loadQuestions(amount: 10, difficulty: .easy)
     }
 
+}
+
+extension FlagsViewModel {
+    // MARK: - Router Methods
+
+    func openMenu() {
+        router.openMenu(user: User.getSavedUser() ?? "")
+    }
 }

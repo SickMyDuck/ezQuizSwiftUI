@@ -11,27 +11,24 @@ import Combine
 struct UserView: View {
     @ObservedObject var viewModel: UserViewModel
 
-    @State private var showNextView: Bool = false
-
     var body: some View {
         NavigationView {
             VStack {
                 TextField("Enter your name", text: $viewModel.user)
                     .padding()
-
-                NavigationLink(destination: MenuView(viewModel: MenuViewModel(user: viewModel.user)), isActive: $showNextView) {
+                NavigationLink(destination: MenuView(viewModel: MenuViewModel(user: viewModel.user)), isActive: $viewModel.showNextView) {
                     EmptyView()
                 }
 
                 Button {
                     viewModel.saveUser()
-                    showNextView = true
+                    viewModel.showNextView = true
                 } label: {
                     Text("Start Quiz")
-                        .foregroundColor(.white)
+                        .foregroundColor(viewModel.user.isEmpty ? Color.black : Color.white)
                         .frame(maxWidth: .infinity)
                         .padding()
-                        .background(Color.blue)
+                        .background(viewModel.user.isEmpty ? Color.gray : Color.blue)
                         .cornerRadius(10)
                 }
                 .disabled(viewModel.user.isEmpty)

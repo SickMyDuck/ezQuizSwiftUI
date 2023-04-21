@@ -18,23 +18,16 @@ struct WelcomeView: View {
                 Text("Welcome back, \(viewModel.user)!")
                     .font(.title)
                     .padding()
-
                 NavigationLink(
                     destination: MenuView(viewModel: MenuViewModel(user: viewModel.user)),
-                    label: {
-                        Text("Start Quiz")
-                            .foregroundColor(.white)
-                            .frame(maxWidth: .infinity)
-                            .padding()
-                            .background(Color.blue)
-                            .cornerRadius(10)
-                    })
-                Button {
-                    viewModel.deleteUser()
-                } label: {
-                    Text("delete")
+                    isActive: $viewModel.showMenuView) {
+                        EmptyView()
+                    }
+            }
+            .onAppear{
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    viewModel.showMenuView = true
                 }
-
             }
             .padding()
             .navigationTitle("Welcome!")
