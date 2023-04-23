@@ -17,19 +17,41 @@ struct DifficultyView<ViewModel: DifficultyViewModelProtocol> : View {
     }
 
     var body: some View {
-        ZStack{
-            NavigationView {
-                VStack {
-                    List(viewModel.difficultyOptions, id: \.self) { difficulty in
-                        NavigationLink(destination: FlagsView()) {
-                            Text(difficulty.rawValue)
-                        }
-                    }
+        NavigationView {
+            VStack {
+                NavigationLink(destination: FlagsView(viewModel: FlagsViewModel(difficulty: viewModel.selectedDifficulty)), isActive: $viewModel.showFlagsView) {
+                    EmptyView()
                 }
+                ForEach(viewModel.difficultyOptions, id: \.self) { difficulty in
+                    Button(action: {
+                        viewModel.selectDifficulty(difficulty)
+                    }) {
+                        Text(difficulty.rawValue)
+                            .font(Fonts.roboto)
+                            .foregroundColor(.white)
+                    }
+                    .buttonStyle(MenuButtonStyle())
+                    .padding(.horizontal, Paddings.large)
+                    .padding(.bottom, Paddings.medium)
+                }
+                Button {
+                    Coordinator.navigateTo(destination: MenuView(viewModel: MenuViewModel()))
+                } label: {
+                    Text("test")
+                }
+
             }
+            .navigationBarTitle("Select difficulty", displayMode: .inline)
+            .navigationBarItems(
+                leading:
+                    NavigationLink(destination: MenuView(viewModel: MenuViewModel())) {
+                        Image(systemName: "arrow.left")
+                            .foregroundColor(.white)
+                    }
+                    .transition(.opacity)
+            )
+
         }
-        .navigationBarHidden(true)
-        .navigationBarBackButtonHidden(true)
     }
 }
 

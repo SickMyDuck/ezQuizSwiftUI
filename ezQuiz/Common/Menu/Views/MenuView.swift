@@ -19,15 +19,40 @@ struct MenuView: View {
                     destination: ProfileView(), isActive: $viewModel.showProfileView) {
                         EmptyView()
                     }
-                // Flag game
-                // Country game
-                // About us
+                VStack {
+                    // Text
+                    Text("Discover the world in one symbol")
+                        .font(Fonts.italicFont)
+                        .padding(Paddings.large)
+                        .frame(alignment: .center)
+                        .multilineTextAlignment(.center)
+                    Spacer()
 
-                ForEach(viewModel.items, id: \.title) { item in
-                    Button(action: {
-                        viewModel.navigateTo(destination: item.destination)
-                    }) {
-                        Text(item.title)
+                    ForEach(viewModel.items, id: \.title) { item in
+                        Button(action: {
+                            viewModel.navigateTo(destination: item.destination)
+                        }) {
+                            Text(item.title)
+                                .font(Fonts.robotoBig)
+                                .foregroundColor(.white)
+                        }
+                        .buttonStyle(MenuButtonStyle())
+                        .padding(.horizontal, Paddings.large)
+                        .padding(.bottom, Paddings.large)
+                    }
+                    // About
+                    Spacer()
+                    HStack {
+                        Button(action: {
+                                  viewModel.showAboutView.toggle()
+                              }) {
+                                  Text("SeeqMyDuck © 2023")
+                                      .foregroundColor(.white)
+                              }
+                              .sheet(isPresented: $viewModel.showAboutView) {
+                                  AboutView()
+                              }
+                              .padding(Paddings.small)
                     }
                 }
             }
@@ -38,14 +63,22 @@ struct MenuView: View {
                 HStack {
                     Image(systemName: "brain.head.profile")
                         .foregroundColor(.white)
-                        .padding(.trailing, Paddings.small)
                     Text("Profile")
                         .foregroundColor(.white)
                 }
-            })
+                .padding(.horizontal, Paddings.semiSmall)
+            }
+                .buttonStyle(ProfileButtonStyle())
+            )
             .padding(Paddings.medium)
 
         }
         .navigationBarBackButtonHidden(true)
+    }
+}
+
+struct MenuView_Previews: PreviewProvider {
+    static var previews: some View {
+        MenuView(viewModel: MenuViewModel())
     }
 }

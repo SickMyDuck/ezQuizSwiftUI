@@ -9,7 +9,5 @@ import Foundation
 import SwiftUI
 
 protocol MenuViewModelProtocol: ObservableObject {
-    var user: String { get }
-
     func navigateTo<Destination: View>(destination: Destination)
 }

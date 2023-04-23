@@ -19,7 +19,7 @@ struct WelcomeView: View {
                     .font(.title)
                     .padding()
                 NavigationLink(
-                    destination: MenuView(viewModel: MenuViewModel(user: viewModel.user)),
+                    destination: MenuView(viewModel: MenuViewModel()),
                     isActive: $viewModel.showMenuView) {
                         EmptyView()
                     }

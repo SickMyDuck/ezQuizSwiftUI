@@ -8,6 +8,9 @@
 import Foundation
 
 class Paddings {
+
+    static let semiSmall: CGFloat = 8
+
     static let small: CGFloat = 8
 
     static let medium: CGFloat = 16

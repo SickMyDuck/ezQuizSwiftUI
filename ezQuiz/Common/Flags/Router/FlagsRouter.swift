@@ -13,6 +13,6 @@ protocol FlagsRouterProtocol {
 
 class FlagsRouter: FlagsRouterProtocol {
     func openMenu(user: String) {
-        Coordinator.navigateTo(destination: MenuView(viewModel: MenuViewModel(user: user)))
+        Coordinator.navigateTo(destination: MenuView(viewModel: MenuViewModel()))
    }
 }

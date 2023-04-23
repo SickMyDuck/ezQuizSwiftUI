@@ -37,20 +37,27 @@ class FlagsViewModel: FlagsViewModelProtocol {
     @Published var buttonForegroundColor: Color = Color.white
     @Published var isMenuVisible: Bool = false
 
-
-
     @Published private var questions: [Question] = []
     @Published private var currentQuestion: Question?
+    @Published private var difficulty: Difficulties
     private let imageLoader: ImageLoader
     private let router = FlagsRouter()
 
     private var cancellables: Set<AnyCancellable> = .init()
 
-    required init(imageLoader: ImageLoader = KingfisherImageLoader.shared) {
+    required init(difficulty: Difficulties,
+                  imageLoader: ImageLoader = KingfisherImageLoader.shared) {
 
+        self.difficulty = difficulty
         self.imageLoader = imageLoader
 
         setupBindings()
+
+    }
+
+    convenience init() {
+
+        self.init(difficulty: .easy)
 
     }
 

@@ -11,19 +11,16 @@ import SwiftUI
 class MenuViewModel: MenuViewModelProtocol {
 
     @Published var showProfileView: Bool = false
-    var user: String
+    @Published var showAboutView: Bool = false
+    @Published var showFlagsView: Bool = false
 
     let items: [MenuItem] = [
-        MenuItem(title: "Quiz", destination: AnyView(FlagsView())),
-        MenuItem(title: "Profile", destination: AnyView(ProfileView())),
-        MenuItem(title: "About", destination: AnyView(AboutView()))
+        MenuItem(title: "Guess the flag", destination: AnyView(DifficultyView(with: DifficultyViewModel()))),
+        MenuItem(title: "Guess the country", destination: AnyView(DifficultyView(with: DifficultyViewModel()))),
+        MenuItem(title: "Scoreboard", destination: AnyView(DifficultyView(with: DifficultyViewModel())))
     ]
-    
-    private let router = MenuRouter()
 
-    init(user: String) {
-        self.user = user
-    }
+    private let router = MenuRouter()
 
     func navigateTo<Destination>(destination: Destination) where Destination : View {
         router.navigateTo(destination: destination)

@@ -9,7 +9,7 @@ import SwiftUI
 import Combine
 struct FlagsView: View {
 
-    @ObservedObject var viewModel = FlagsViewModel()
+    @ObservedObject var viewModel: FlagsViewModel
 
     // Определяем состояние меню
     @State private var isMenuVisible = false
@@ -36,6 +36,7 @@ struct FlagsView: View {
                     }
                     .frame(alignment: .trailing)
                     .padding(Paddings.large)
+                    .foregroundColor(.white)
 
                 }
                 Spacer()
@@ -70,7 +71,6 @@ struct FlagsView: View {
                 .padding(.bottom, Paddings.large)
             }
             .navigationBarBackButtonHidden(true)
-            .background(Color.black)
             .onAppear(perform: viewModel.onAppear)
 
             if viewModel.isMenuVisible {
@@ -82,6 +82,6 @@ struct FlagsView: View {
 
 struct FlagsView_Previews: PreviewProvider {
     static var previews: some View {
-        FlagsView()
+        FlagsView(viewModel: FlagsViewModel())
     }
 }

@@ -16,7 +16,7 @@ struct UserView: View {
             VStack {
                 TextField("Enter your name", text: $viewModel.user)
                     .padding()
-                NavigationLink(destination: MenuView(viewModel: MenuViewModel(user: viewModel.user)), isActive: $viewModel.showNextView) {
+                NavigationLink(destination: MenuView(viewModel: MenuViewModel()), isActive: $viewModel.showNextView) {
                     EmptyView()
                 }
 

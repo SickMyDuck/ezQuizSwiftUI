@@ -11,6 +11,6 @@ import SwiftUI
 class profileRouter {
 
     func openMenu(user: String) {
-        Coordinator.navigateTo(destination: MenuView(viewModel: MenuViewModel(user: user)))
+        Coordinator.navigateTo(destination: MenuView(viewModel: MenuViewModel()))
    }
 }

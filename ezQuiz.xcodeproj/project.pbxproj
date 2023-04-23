@@ -19,7 +19,6 @@
 		594EEB7E29D63BEC006F6AC7 /* MenuViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594EEB7D29D63BEC006F6AC7 /* MenuViewModelProtocol.swift */; };
 		594EEB8129D63CB4006F6AC7 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594EEB8029D63CB4006F6AC7 /* MenuView.swift */; };
 		5994C3D429DCCD65003F384F /* FlagsScreenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5994C3D329DCCD65003F384F /* FlagsScreenTests.swift */; };
-		5994C3D829DCD2E8003F384F /* MenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5994C3D729DCD2E8003F384F /* MenuRouter.swift */; };
 		59D82F5B29EDF0C7009F72AF /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D82F5A29EDF0C7009F72AF /* UserView.swift */; };
 		59D82F5E29EDF32F009F72AF /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D82F5D29EDF32F009F72AF /* WelcomeView.swift */; };
 		59D82F6029EDF4B2009F72AF /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D82F5F29EDF4B2009F72AF /* StartView.swift */; };
@@ -36,6 +35,10 @@
 		59D82F7A29EF5C4B009F72AF /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D82F7929EF5C4B009F72AF /* ProfileRouter.swift */; };
 		59D82F7C29EF5D4F009F72AF /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D82F7B29EF5D4F009F72AF /* Coordinator.swift */; };
 		59D90A8829F19FDD00CA80DD /* PauseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D90A8729F19FDD00CA80DD /* PauseView.swift */; };
+		59D90A8A29F358B400CA80DD /* MenuButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D90A8929F358B400CA80DD /* MenuButtonStyle.swift */; };
+		59D90A8F29F35A1000CA80DD /* ProfileButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D90A8E29F35A1000CA80DD /* ProfileButtonStyle.swift */; };
+		59D90A9129F3D99E00CA80DD /* MenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D90A9029F3D99D00CA80DD /* MenuRouter.swift */; };
+		59D90A9329F5216400CA80DD /* DifficultyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D90A9229F5216300CA80DD /* DifficultyRouter.swift */; };
 		59F9D1C129C3D014002374E2 /* ezQuizApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F9D1C029C3D014002374E2 /* ezQuizApp.swift */; };
 		59F9D1C329C3D014002374E2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F9D1C229C3D014002374E2 /* ContentView.swift */; };
 		59F9D1C529C3D01B002374E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59F9D1C429C3D01B002374E2 /* Assets.xcassets */; };
@@ -84,7 +87,6 @@
 		594EEB7D29D63BEC006F6AC7 /* MenuViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModelProtocol.swift; sourceTree = "<group>"; };
 		594EEB8029D63CB4006F6AC7 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		5994C3D329DCCD65003F384F /* FlagsScreenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagsScreenTests.swift; sourceTree = "<group>"; };
-		5994C3D729DCD2E8003F384F /* MenuRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRouter.swift; sourceTree = "<group>"; };
 		59D82F5A29EDF0C7009F72AF /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		59D82F5D29EDF32F009F72AF /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		59D82F5F29EDF4B2009F72AF /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
@@ -101,6 +103,10 @@
 		59D82F7929EF5C4B009F72AF /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
 		59D82F7B29EF5D4F009F72AF /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		59D90A8729F19FDD00CA80DD /* PauseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseView.swift; sourceTree = "<group>"; };
+		59D90A8929F358B400CA80DD /* MenuButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButtonStyle.swift; sourceTree = "<group>"; };
+		59D90A8E29F35A1000CA80DD /* ProfileButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileButtonStyle.swift; sourceTree = "<group>"; };
+		59D90A9029F3D99D00CA80DD /* MenuRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRouter.swift; sourceTree = "<group>"; };
+		59D90A9229F5216300CA80DD /* DifficultyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyRouter.swift; sourceTree = "<group>"; };
 		59F9D1BD29C3D014002374E2 /* ezQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ezQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59F9D1C029C3D014002374E2 /* ezQuizApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ezQuizApp.swift; sourceTree = "<group>"; };
 		59F9D1C229C3D014002374E2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -162,6 +168,7 @@
 		5902DF5B29E0D480005046C6 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				59D90A8D29F359F000CA80DD /* Styles */,
 				5902DF5F29E0E21F005046C6 /* Network */,
 				5902DF5C29E0D48F005046C6 /* Colors */,
 				59D82F7729EF56CF009F72AF /* User.swift */,
@@ -200,10 +207,10 @@
 		594EEB7729D63775006F6AC7 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				5994C3D629DCD2DA003F384F /* Router */,
 				5994C3D529DCD2B1003F384F /* Views */,
 				594EEB7F29D63C93006F6AC7 /* ViewModels */,
 				594EEB7829D6377F006F6AC7 /* Models */,
+				59D90A9029F3D99D00CA80DD /* MenuRouter.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -232,14 +239,6 @@
 				594EEB8029D63CB4006F6AC7 /* MenuView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		5994C3D629DCD2DA003F384F /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				5994C3D729DCD2E8003F384F /* MenuRouter.swift */,
-			);
-			path = Router;
 			sourceTree = "<group>";
 		};
 		5994C3D929DCDA88003F384F /* Flags */ = {
@@ -293,6 +292,7 @@
 			children = (
 				59D82F6629EEE5DB009F72AF /* DifficultyView.swift */,
 				59D82F6829EEE5F4009F72AF /* DifficultyViewModel.swift */,
+				59D90A9229F5216300CA80DD /* DifficultyRouter.swift */,
 			);
 			path = Difficulty;
 			sourceTree = "<group>";
@@ -328,6 +328,15 @@
 				59D82F7929EF5C4B009F72AF /* ProfileRouter.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		59D90A8D29F359F000CA80DD /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				59D90A8929F358B400CA80DD /* MenuButtonStyle.swift */,
+				59D90A8E29F35A1000CA80DD /* ProfileButtonStyle.swift */,
+			);
+			path = Styles;
 			sourceTree = "<group>";
 		};
 		59F9D1B429C3D013002374E2 = {
@@ -656,15 +665,16 @@
 				59FDBABF29EA0C7B0012C945 /* Fonts.swift in Sources */,
 				59D82F7429EF519C009F72AF /* ProfileView.swift in Sources */,
 				5902DF5829E0D08E005046C6 /* FlagsViewModel.swift in Sources */,
+				59D90A9129F3D99E00CA80DD /* MenuRouter.swift in Sources */,
 				59D90A8829F19FDD00CA80DD /* PauseView.swift in Sources */,
 				59D82F6929EEE5F4009F72AF /* DifficultyViewModel.swift in Sources */,
 				5902DF5E29E0D4AA005046C6 /* Colors.swift in Sources */,
+				59D90A8F29F35A1000CA80DD /* ProfileButtonStyle.swift in Sources */,
 				59D82F6729EEE5DB009F72AF /* DifficultyView.swift in Sources */,
 				59D82F7629EF51BB009F72AF /* ProfileViewModel.swift in Sources */,
 				594EEB7A29D63793006F6AC7 /* Difficulties.swift in Sources */,
 				59D82F7829EF56CF009F72AF /* User.swift in Sources */,
 				5902DF6429E0EC91005046C6 /* QuestionItemModel.swift in Sources */,
-				5994C3D829DCD2E8003F384F /* MenuRouter.swift in Sources */,
 				594EEB8129D63CB4006F6AC7 /* MenuView.swift in Sources */,
 				59D82F5B29EDF0C7009F72AF /* UserView.swift in Sources */,
 				5902DF5A29E0D0C1005046C6 /* FlagsView.swift in Sources */,
@@ -680,7 +690,9 @@
 				59D82F6F29EF0DAF009F72AF /* AboutView.swift in Sources */,
 				59D82F7C29EF5D4F009F72AF /* Coordinator.swift in Sources */,
 				59D82F7A29EF5C4B009F72AF /* ProfileRouter.swift in Sources */,
+				59D90A9329F5216400CA80DD /* DifficultyRouter.swift in Sources */,
 				59FDBAB829E779400012C945 /* KingfisherImageLoader.swift in Sources */,
+				59D90A8A29F358B400CA80DD /* MenuButtonStyle.swift in Sources */,
 				594EEB7E29D63BEC006F6AC7 /* MenuViewModelProtocol.swift in Sources */,
 				59D82F6B29EEFD6A009F72AF /* MenuItem.swift in Sources */,
 				59D82F6229EDF4E5009F72AF /* UserViewModel.swift in Sources */,

@@ -10,7 +10,6 @@ import SwiftUI
 
 struct AboutView: View {
     @ObservedObject var viewModel: AboutViewModel = AboutViewModel()
-   // @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
         NavigationView {
@@ -24,12 +23,6 @@ struct AboutView: View {
                     .padding()
 
                 Spacer()
-
-//                Button("Назад") {
-//                    // Переходим на предыдущий экран
-//                    presentationMode.wrappedValue.dismiss()
-//                }
-//                .padding()
             }
             .navigationBarTitle("", displayMode: .inline)
         }
