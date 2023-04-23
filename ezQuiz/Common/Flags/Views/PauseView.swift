@@ -19,7 +19,7 @@ struct PauseView: View {
                 viewModel.isMenuVisible.toggle()
             }
         VStack {
-            Button("Продолжить") {
+            Button("Continue") {
                 viewModel.isMenuVisible.toggle()
             }
             .font(Fonts.roboto)

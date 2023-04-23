@@ -9,6 +9,10 @@ import Foundation
 import Combine
 
 class AboutViewModel: ObservableObject {
-    // Здесь можно добавить какие-то свойства, которые потребуются на экране "О нас"
+
+    var myTg = URL(string: "tg://resolve?domain=seeq_my_duck")!
+    var githubLink = URL(string: "https://github.com/SickMyDuck/ezQuizSwiftUI")!
+
+    
 }
 

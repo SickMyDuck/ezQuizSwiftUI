@@ -30,13 +30,14 @@ struct MenuView: View {
 
                     ForEach(viewModel.items, id: \.title) { item in
                         Button(action: {
+                            viewModel.hideNavBar.toggle()
                             viewModel.navigateTo(destination: item.destination)
                         }) {
                             Text(item.title)
                                 .font(Fonts.robotoBig)
                                 .foregroundColor(.white)
                         }
-                        .buttonStyle(MenuButtonStyle())
+                        .buttonStyle(MainButtonStyle())
                         .padding(.horizontal, Paddings.large)
                         .padding(.bottom, Paddings.large)
                     }
@@ -44,15 +45,15 @@ struct MenuView: View {
                     Spacer()
                     HStack {
                         Button(action: {
-                                  viewModel.showAboutView.toggle()
-                              }) {
-                                  Text("SeeqMyDuck © 2023")
-                                      .foregroundColor(.white)
-                              }
-                              .sheet(isPresented: $viewModel.showAboutView) {
-                                  AboutView()
-                              }
-                              .padding(Paddings.small)
+                            viewModel.showAboutView.toggle()
+                        }) {
+                            Text("SeeqMyDuck © 2023")
+                                .foregroundColor(.white)
+                        }
+                        .sheet(isPresented: $viewModel.showAboutView) {
+                            AboutView()
+                        }
+                        .padding(Paddings.small)
                     }
                 }
             }

@@ -11,7 +11,7 @@ import SwiftUI
 struct ProfileButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .padding(Paddings.small)
+            .padding(Paddings.semiSmall)
             .contentShape(Rectangle())
             .background(
                 RoundedRectangle(cornerRadius: 10)

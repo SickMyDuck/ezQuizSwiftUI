@@ -13,6 +13,7 @@ class MenuViewModel: MenuViewModelProtocol {
     @Published var showProfileView: Bool = false
     @Published var showAboutView: Bool = false
     @Published var showFlagsView: Bool = false
+    @Published var hideNavBar: Bool = false
 
     let items: [MenuItem] = [
         MenuItem(title: "Guess the flag", destination: AnyView(DifficultyView(with: DifficultyViewModel()))),

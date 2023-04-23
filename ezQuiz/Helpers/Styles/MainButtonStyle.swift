@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct MenuButtonStyle: ButtonStyle {
+struct MainButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .frame(maxWidth: .infinity, alignment: .center)
@@ -17,7 +17,7 @@ struct MenuButtonStyle: ButtonStyle {
             .background(
                 RoundedRectangle(cornerRadius: 10)
                     .stroke(Color.white, lineWidth: 3)
-                    .background(Color.clear)
+                    .background(configuration.isPressed ? Color.gray : Color.clear)
             )
     }
 }

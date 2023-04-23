@@ -18,6 +18,7 @@ protocol FlagsViewModelProtocol: ObservableObject {
     var isAnswered: Bool { get }
     var isQuizFinished: Bool { get }
     var questionsCounter: Int { get }
+    var selectedAnswer: String { get }
 
     func onAppear()
     func checkAnswer(answer: String)
@@ -33,9 +34,8 @@ class FlagsViewModel: FlagsViewModelProtocol {
     @Published var isAnswered: Bool = false
     @Published var questionsCounter: Int = 0
     @Published var isQuizFinished: Bool = false
-    @Published var buttonBackgroundColor: Color = Color.blue
-    @Published var buttonForegroundColor: Color = Color.white
     @Published var isMenuVisible: Bool = false
+    @Published var selectedAnswer: String = ""
 
     @Published private var questions: [Question] = []
     @Published private var currentQuestion: Question?
@@ -62,11 +62,11 @@ class FlagsViewModel: FlagsViewModelProtocol {
     }
 
     func checkAnswer(answer: String) {
+
+        selectedAnswer = answer
+
         if answer == correctAnswer {
             correctAnswersCounter += 1
-            buttonBackgroundColor = Color.green
-        } else {
-            buttonBackgroundColor = Color.red
         }
 
         isAnswered = true
@@ -139,7 +139,6 @@ class FlagsViewModel: FlagsViewModelProtocol {
                         self?.isAnswered = false
                     }
                 }
-                self?.buttonBackgroundColor = Color.blue
             }
             .store(in: &cancellables)
 
@@ -147,15 +146,16 @@ class FlagsViewModel: FlagsViewModelProtocol {
                 self?.flagUrl = URL(string: "https://sickmyduck.ru/flagImages/\($0?.flagImage ?? "")")
                 self?.answers = $0?.answers ?? []
                 self?.correctAnswer = $0?.correctAnswer ?? ""
-                if let flagUrl = self?.flagUrl {
+                if let flagUrl = self?.flagUrl, let _ = $0?.flagImage {
                     self?.loadImageFromURL(flagUrl)
                 }
+                self?.selectedAnswer = ""
             }
             .store(in: &cancellables)
         }
 
     func onAppear() {
-        loadQuestions(amount: 10, difficulty: .easy)
+        loadQuestions(amount: 10, difficulty: self.difficulty)
     }
 
 }

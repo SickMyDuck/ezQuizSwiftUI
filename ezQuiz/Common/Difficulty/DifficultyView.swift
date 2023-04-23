@@ -30,7 +30,7 @@ struct DifficultyView<ViewModel: DifficultyViewModelProtocol> : View {
                             .font(Fonts.roboto)
                             .foregroundColor(.white)
                     }
-                    .buttonStyle(MenuButtonStyle())
+                    .buttonStyle(MainButtonStyle())
                     .padding(.horizontal, Paddings.large)
                     .padding(.bottom, Paddings.medium)
                 }
@@ -47,6 +47,7 @@ struct DifficultyView<ViewModel: DifficultyViewModelProtocol> : View {
                         .foregroundColor(.white)
                 }
             )
+            .navigationBarBackButtonHidden(true)
         }
     }
 }

@@ -11,45 +11,36 @@ struct FlagsView: View {
 
     @ObservedObject var viewModel: FlagsViewModel
 
-    // Определяем состояние меню
-    @State private var isMenuVisible = false
-
     let columns = [
         GridItem(.flexible())
     ]
 
     var body: some View {
         ZStack {
-            // Основное представление
             VStack {
                 HStack {
-                    Text("Finished!")
-                        .font(Fonts.roboto)
-                        .foregroundColor(.white)
-                        .opacity(viewModel.isQuizFinished ? 1 : 0)
-                        .animation(.easeInOut)
+                    Text("Correct answers:  \(viewModel.correctAnswersCounter)")
+                        .foregroundColor(.green)
+                        .font(.headline)
                     Spacer()
-                    Button {
-                    viewModel.isMenuVisible.toggle()
-                    } label: {
-                        Image(systemName: "pause.circle")
-                    }
-                    .frame(alignment: .trailing)
-                    .padding(Paddings.large)
-                    .foregroundColor(.white)
+                    Text("Question \(viewModel.questionsCounter + (viewModel.questionsCounter == 10 ? 0 : 1))")
+                        .foregroundColor(.white)
+                        .font(.headline)
 
                 }
-                Spacer()
+                .padding(Paddings.large)
+
                 ZStack {
                     RoundedRectangle(cornerRadius: 10)
                         .fill(Color.gray)
-                        .frame(width: 250, height: 160)
+                        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width * (viewModel.flagImage.size.height / viewModel.flagImage.size.width))
                     Image(uiImage: viewModel.flagImage)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 240, height: 150)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: UIScreen.main.bounds.width - 20, height: UIScreen.main.bounds.width * (viewModel.flagImage.size.height / viewModel.flagImage.size.width) - 20)
                 }
                 .padding()
+
 
                 Spacer()
 
@@ -59,17 +50,43 @@ struct FlagsView: View {
                             viewModel.checkAnswer(answer: answer)
                         }) {
                             Text(answer)
-                                .foregroundColor(viewModel.buttonForegroundColor)
-                                .frame(maxWidth: .infinity)
-                                .padding()
-                                .background(viewModel.buttonBackgroundColor)
-                                .cornerRadius(10)
                         }
+                        .background(
+                            (answer == viewModel.correctAnswer && viewModel.selectedAnswer == answer) ? Color.green : ((viewModel.selectedAnswer == answer) ? Color.red : Color.clear)
+                        )
+                        .padding(.horizontal, Paddings.large)
+                        .padding(.bottom, Paddings.medium)
+                        .buttonStyle(MainButtonStyle())
                         .disabled(viewModel.isAnswered)
+
+
                     }
                 }
                 .padding(.bottom, Paddings.large)
             }
+            .navigationBarItems(leading: Button {
+                viewModel.isMenuVisible.toggle()
+            } label: {
+                Image(systemName: "info.circle")
+                    .resizable()
+                    .frame(width: 30, height: 30)
+            }
+                .frame(alignment: .trailing)
+                .padding(Paddings.large)
+                .foregroundColor(.white)
+            )
+            .navigationBarItems(trailing:
+                                    Button {
+                viewModel.isMenuVisible.toggle()
+            } label: {
+                Image(systemName: "pause.circle")
+                    .resizable()
+                    .frame(width: 30, height: 30)
+            }
+                .frame(alignment: .trailing)
+                .padding(Paddings.large)
+                .foregroundColor(.white)
+            )
             .navigationBarBackButtonHidden(true)
             .onAppear(perform: viewModel.onAppear)
 
