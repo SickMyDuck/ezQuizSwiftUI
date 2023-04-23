@@ -34,23 +34,19 @@ struct DifficultyView<ViewModel: DifficultyViewModelProtocol> : View {
                     .padding(.horizontal, Paddings.large)
                     .padding(.bottom, Paddings.medium)
                 }
-                Button {
-                    Coordinator.navigateTo(destination: MenuView(viewModel: MenuViewModel()))
-                } label: {
-                    Text("test")
-                }
-
             }
+            .transition(.move(edge: .leading))
+            .animation(.easeInOut)
             .navigationBarTitle("Select difficulty", displayMode: .inline)
             .navigationBarItems(
                 leading:
-                    NavigationLink(destination: MenuView(viewModel: MenuViewModel())) {
-                        Image(systemName: "arrow.left")
-                            .foregroundColor(.white)
-                    }
-                    .transition(.opacity)
+                Button {
+                    viewModel.backToMenu()
+                } label: {
+                    Image(systemName: "arrow.left")
+                        .foregroundColor(.white)
+                }
             )
-
         }
     }
 }
