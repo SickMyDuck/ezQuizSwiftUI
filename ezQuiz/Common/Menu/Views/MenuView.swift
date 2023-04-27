@@ -30,8 +30,7 @@ struct MenuView: View {
 
                     ForEach(viewModel.items, id: \.title) { item in
                         Button(action: {
-                            viewModel.hideNavBar.toggle()
-                            viewModel.navigateTo(destination: item.destination)
+                            viewModel.navigateTo(destination: item.destination, showNavBar: item.showNavBar)
                         }) {
                             Text(item.title)
                                 .font(Fonts.robotoBig)

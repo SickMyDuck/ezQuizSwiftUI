@@ -16,35 +16,16 @@ struct ProfileView: View {
             TextField("Enter your name", text: $viewModel.user)
                 .padding()
                 .textFieldStyle(RoundedBorderTextFieldStyle())
-
-            HStack {
-                Text("Best Scores:")
-                    .font(.headline)
-                Spacer()
-            }
-            List {
-                Section(header: Text("Easy")) {
-                    Text("\(viewModel.bestScoreEasy)")
+                .navigationBarTitle("Profile")
+                .navigationBarItems(trailing: Button(action: {
+                    viewModel.saveUserName()
+                    viewModel.openMenu()
+                }) {
+                    Text("Save")
+                })
+                .onAppear {
+                    viewModel.loadUser()
                 }
-                Section(header: Text("Medium")) {
-                    Text("\(viewModel.bestScoreMedium)")
-                }
-                Section(header: Text("Hard")) {
-                    Text("\(viewModel.bestScoreHard)")
-                }
-            }
-            .listStyle(GroupedListStyle())
-            .navigationBarTitle("Profile")
-            .navigationBarItems(trailing: Button(action: {
-                viewModel.saveUserName()
-                viewModel.openMenu()
-            }) {
-                Text("Save")
-            })
-            .onAppear {
-                viewModel.loadUser()
-                viewModel.loadBestScores()
-            }
         }
     }
 }

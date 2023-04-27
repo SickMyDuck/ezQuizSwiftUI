@@ -11,5 +11,6 @@ import SwiftUI
 struct MenuItem {
     let title: String
     let destination: AnyView
+    let showNavBar: Bool
 }
 

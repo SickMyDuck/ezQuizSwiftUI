@@ -22,6 +22,7 @@ protocol FlagsViewModelProtocol: ObservableObject {
 
     func onAppear()
     func checkAnswer(answer: String)
+    func getButtonColor(answer: String) -> Color
 }
 
 class FlagsViewModel: FlagsViewModelProtocol {
@@ -72,6 +73,10 @@ class FlagsViewModel: FlagsViewModelProtocol {
         isAnswered = true
 
         startNewQuestion()
+    }
+
+    func getButtonColor(answer: String) -> Color {
+        return (answer == self.correctAnswer && !self.selectedAnswer.isEmpty) ? Color.green : ((self.selectedAnswer == answer) ? Color.red : Color.clear)
     }
 
     private func startNewQuestion() {

@@ -19,22 +19,17 @@ struct AboutView: View {
                     .padding()
 
                 Text("My name is Ruslan, and I am the only developer of this app, that's why it may seem a bit buggy. If you found any, please, contact me at telegram. \n \n Also feel free to ask me any questions or share your thoughts.")
-
                     .padding()
 
                 Link("My tg: @seeq_my_duck", destination: viewModel.myTg)
-
-
                     .padding()
-                HStack {
-                    Text("You can also find source code here")
-                        .foregroundColor(.blue)
-                        .onTapGesture {
-                            UIApplication.shared.open(viewModel.githubLink)
-                        }
-                        .padding()
-                }
 
+                Text("You can also find source code here")
+                    .foregroundColor(.blue)
+                    .onTapGesture {
+                        UIApplication.shared.open(viewModel.githubLink)
+                    }
+                    .padding()
                 Spacer()
             }
             .navigationBarTitle("", displayMode: .inline)

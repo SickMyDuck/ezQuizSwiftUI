@@ -52,7 +52,7 @@ struct FlagsView: View {
                             Text(answer)
                         }
                         .background(
-                            (answer == viewModel.correctAnswer && viewModel.selectedAnswer == answer) ? Color.green : ((viewModel.selectedAnswer == answer) ? Color.red : Color.clear)
+                            viewModel.getButtonColor(answer: answer)
                         )
                         .padding(.horizontal, Paddings.large)
                         .padding(.bottom, Paddings.medium)

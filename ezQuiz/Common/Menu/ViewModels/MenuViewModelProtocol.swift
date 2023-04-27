@@ -9,5 +9,5 @@ import Foundation
 import SwiftUI
 
 protocol MenuViewModelProtocol: ObservableObject {
-    func navigateTo<Destination: View>(destination: Destination)
+    func navigateTo<Destination: View>(destination: Destination, showNavBar: Bool)
 }

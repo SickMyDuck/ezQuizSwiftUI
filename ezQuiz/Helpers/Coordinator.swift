@@ -10,11 +10,12 @@ import SwiftUI
 
 class Coordinator {
 
-    static func navigateTo<Destination: View>(destination: Destination, backButton: Bool = false) {
+    static func navigateTo<Destination: View>(destination: Destination, backButton: Bool = false, showNavBar: Bool = false) {
         let view = UIHostingController(rootView: destination.environment(\.colorScheme, .dark))
         let navigationController = UINavigationController(rootViewController: view)
-        navigationController.setNavigationBarHidden(true, animated: false)
-
+        if !showNavBar {
+            navigationController.setNavigationBarHidden(true, animated: false)
+        }
         let transition = CATransition()
         transition.type = .push
         transition.subtype = backButton ? .fromLeft : .fromRight
@@ -23,6 +24,7 @@ class Coordinator {
         UIApplication.shared.windows.first?.rootViewController = navigationController
         UIApplication.shared.windows.first?.makeKeyAndVisible()
     }
+
 
 
 }
