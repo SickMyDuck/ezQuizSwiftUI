@@ -12,14 +12,11 @@ struct ScoreboardView: View {
     @ObservedObject var viewModel: ScoreboardViewModel = ScoreboardViewModel()
 
     var body: some View {
-        ScrollView {
-            HStack {
-                Text("Guess the flag:")
-                    // .font(.headline)
-                Spacer()
-            }
-            .background(.black)
-           List {
+        VStack {
+            Text("Guess the flag:")
+                .font(.headline)
+                .background(.black)
+            List {
                 Section(header: Text("Easy")) {
                     Text("\(viewModel.bestScoreEasy)")
                 }
@@ -32,11 +29,8 @@ struct ScoreboardView: View {
             }
             .listStyle(GroupedListStyle())
 
-            HStack {
                 Text("Guess the country:")
                     .font(.headline)
-                Spacer()
-            }
             .background(.black)
             List {
                 Section(header: Text("Easy")) {
@@ -53,17 +47,18 @@ struct ScoreboardView: View {
         }
         .background(.black)
         .navigationBarTitle("Best score")
+        .foregroundColor(.white)
         .onAppear {
             viewModel.loadBestScores()
         }
         .navigationBarItems(
             leading:
-            Button {
-                viewModel.backToMenu()
-            } label: {
-                Image(systemName: "arrow.left")
-                    .foregroundColor(.white)
-            }
+                Button {
+                    viewModel.backToMenu()
+                } label: {
+                    Image(systemName: "arrow.left")
+                        .foregroundColor(.white)
+                }
         )
     }
 }

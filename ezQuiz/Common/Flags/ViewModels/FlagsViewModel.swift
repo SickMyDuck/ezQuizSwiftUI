@@ -15,10 +15,12 @@ protocol FlagsViewModelProtocol: ObservableObject {
     var correctAnswer: String { get }
     var flagImage: UIImage { get }
     var correctAnswersCounter: Int { get }
-    var isAnswered: Bool { get }
-    var isQuizFinished: Bool { get }
+    var isAnswered: Bool { get set}
+    var isQuizFinished: Bool { get set }
     var questionsCounter: Int { get }
     var selectedAnswer: String { get }
+    var isInformationVisible: Bool { get set }
+    var isHintUsed: Bool { get set }
 
     func onAppear()
     func checkAnswer(answer: String)
@@ -37,10 +39,14 @@ class FlagsViewModel: FlagsViewModelProtocol {
     @Published var isQuizFinished: Bool = false
     @Published var isMenuVisible: Bool = false
     @Published var selectedAnswer: String = ""
+    @Published var isInformationVisible: Bool = false
+    @Published var isHintUsed: Bool = false
 
     @Published private var questions: [Question] = []
     @Published private var currentQuestion: Question?
     @Published private var difficulty: Difficulties
+    @Published private var wrongAnswersArray: [String] = []
+
     private let imageLoader: ImageLoader
     private let router = FlagsRouter()
 
@@ -62,6 +68,14 @@ class FlagsViewModel: FlagsViewModelProtocol {
 
     }
 
+    // MARK: - CONFIGURATIONS METHODS
+
+    func onAppear() {
+        loadQuestions(amount: 10, difficulty: self.difficulty)
+    }
+
+    // MARK: - VIEW MODEL METHODS
+
     func checkAnswer(answer: String) {
 
         selectedAnswer = answer
@@ -76,18 +90,29 @@ class FlagsViewModel: FlagsViewModelProtocol {
     }
 
     func getButtonColor(answer: String) -> Color {
-        return (answer == self.correctAnswer && !self.selectedAnswer.isEmpty) ? Color.green : ((self.selectedAnswer == answer) ? Color.red : Color.clear)
-    }
 
-    private func startNewQuestion() {
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
-            self.increaseQuestionsCounter()
+        var buttonColor = Color.clear
+
+        if answer == self.correctAnswer && !self.selectedAnswer.isEmpty {
+            buttonColor = Color.green
+        } else if self.selectedAnswer == answer {
+            buttonColor = Color.red
         }
+
+        return buttonColor
+
     }
 
-    private func increaseQuestionsCounter() {
-        questionsCounter += 1
+    func isButtonAvailable(answer: String) -> Bool {
+        if isHintUsed && !self.wrongAnswersArray.isEmpty {
+            if Array(wrongAnswersArray.prefix(2)).contains(answer) {
+                return false
+            }
+        }
+        return true
     }
+
+    // MARK: - PRIVATE METHODS
 
     // MARK: Data loading
 
@@ -121,46 +146,61 @@ class FlagsViewModel: FlagsViewModelProtocol {
             .store(in: &cancellables)
     }
 
+    private func startNewQuestion() {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+            self.increaseQuestionsCounter()
+        }
+    }
+
+    private func increaseQuestionsCounter() {
+        questionsCounter += 1
+    }
 
     private func setupBindings() {
 
-            $questions.sink { [weak self] question in
-                guard !question.isEmpty else { return }
-                self?.flagUrl = URL(string: "https://sickmyduck.ru/flagImages/\(question[0].flagImage)")
-                self?.answers = question[0].answers
-                self?.correctAnswer = question[0].correctAnswer
-                if let flagUrl = self?.flagUrl {
-                    self?.loadImageFromURL(flagUrl)
-                }
+        $questions.sink { [weak self] question in
+            guard !question.isEmpty else { return }
+            self?.flagUrl = URL(string: "https://sickmyduck.ru/flagImages/\(question[0].flagImage)")
+            self?.correctAnswer = question[0].correctAnswer
+            self?.answers = question[0].answers.shuffled()
+            if let flagUrl = self?.flagUrl {
+                self?.loadImageFromURL(flagUrl)
             }
-            .store(in: &cancellables)
-
-            $questionsCounter.sink { [weak self] in
-                if !(self?.questions.isEmpty ?? true) {
-                    if $0 == (self?.questions.endIndex ?? 0) {
-                        self?.isQuizFinished = true
-                    } else {
-                        self?.currentQuestion = self?.questions[$0]
-                        self?.isAnswered = false
-                    }
-                }
-            }
-            .store(in: &cancellables)
-
-            $currentQuestion.sink { [weak self] in
-                self?.flagUrl = URL(string: "https://sickmyduck.ru/flagImages/\($0?.flagImage ?? "")")
-                self?.answers = $0?.answers ?? []
-                self?.correctAnswer = $0?.correctAnswer ?? ""
-                if let flagUrl = self?.flagUrl, let _ = $0?.flagImage {
-                    self?.loadImageFromURL(flagUrl)
-                }
-                self?.selectedAnswer = ""
-            }
-            .store(in: &cancellables)
         }
+        .store(in: &cancellables)
 
-    func onAppear() {
-        loadQuestions(amount: 10, difficulty: self.difficulty)
+        $questionsCounter.sink { [weak self] in
+            if !(self?.questions.isEmpty ?? true) {
+                if $0 == (self?.questions.endIndex ?? 0) {
+                    self?.isQuizFinished = true
+                } else {
+                    self?.isHintUsed = false
+                    self?.currentQuestion = self?.questions[$0]
+                    self?.isAnswered = false
+                }
+            }
+        }
+        .store(in: &cancellables)
+
+        $currentQuestion.sink { [weak self] in
+            self?.flagUrl = URL(string: "https://sickmyduck.ru/flagImages/\($0?.flagImage ?? "")")
+            self?.correctAnswer = $0?.correctAnswer ?? ""
+            self?.answers = $0?.answers.shuffled() ?? []
+            if let flagUrl = self?.flagUrl, let _ = $0?.flagImage {
+                self?.loadImageFromURL(flagUrl)
+            }
+            self?.selectedAnswer = ""
+        }
+        .store(in: &cancellables)
+
+        $answers
+            .map { answers in
+                answers.filter { $0 != self.correctAnswer }
+            }
+            .map { array in
+                    array.shuffled()
+                }
+            .assign(to: &$wrongAnswersArray)
     }
 
 }
