@@ -22,7 +22,7 @@
 		59A8D0B629F990A400C75569 /* ScoreboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A8D0B529F990A300C75569 /* ScoreboardRouter.swift */; };
 		59A8D0BA29FB330900C75569 /* QuizResults.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 59A8D0B829FB330800C75569 /* QuizResults.xcdatamodeld */; };
 		59AF97EB29FD6D7900FF25CF /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AF97EA29FD6D7900FF25CF /* CoreDataHelper.swift */; };
-		59AF97ED29FD706200FF25CF /* GameType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AF97EC29FD706200FF25CF /* GameType.swift */; };
+		59AF97EF29FE6B4300FF25CF /* GameType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AF97EE29FE6B4300FF25CF /* GameType.swift */; };
 		59D82F5B29EDF0C7009F72AF /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D82F5A29EDF0C7009F72AF /* UserView.swift */; };
 		59D82F5E29EDF32F009F72AF /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D82F5D29EDF32F009F72AF /* WelcomeView.swift */; };
 		59D82F6029EDF4B2009F72AF /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D82F5F29EDF4B2009F72AF /* StartView.swift */; };
@@ -97,7 +97,7 @@
 		59A8D0B529F990A300C75569 /* ScoreboardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreboardRouter.swift; sourceTree = "<group>"; };
 		59A8D0B929FB330800C75569 /* QuizResults.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = QuizResults.xcdatamodel; sourceTree = "<group>"; };
 		59AF97EA29FD6D7900FF25CF /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
-		59AF97EC29FD706200FF25CF /* GameType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameType.swift; sourceTree = "<group>"; };
+		59AF97EE29FE6B4300FF25CF /* GameType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameType.swift; sourceTree = "<group>"; };
 		59D82F5A29EDF0C7009F72AF /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		59D82F5D29EDF32F009F72AF /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		59D82F5F29EDF4B2009F72AF /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
@@ -333,7 +333,6 @@
 				59D82F5729EDEF89009F72AF /* User */,
 				59D82F5C29EDF2CE009F72AF /* Welcome */,
 				59D82F6529EEE5A6009F72AF /* Difficulty */,
-				59AF97EC29FD706200FF25CF /* GameType.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -407,6 +406,7 @@
 				59F9D1C229C3D014002374E2 /* ContentView.swift */,
 				59F9D1C429C3D01B002374E2 /* Assets.xcassets */,
 				59F9D1C629C3D01B002374E2 /* Preview Content */,
+				59AF97EE29FE6B4300FF25CF /* GameType.swift */,
 			);
 			path = ezQuiz;
 			sourceTree = "<group>";
@@ -722,6 +722,7 @@
 				59D82F7129EF0DBE009F72AF /* AboutViewModel.swift in Sources */,
 				59D82F6029EDF4B2009F72AF /* StartView.swift in Sources */,
 				59F9D1C329C3D014002374E2 /* ContentView.swift in Sources */,
+				59AF97EF29FE6B4300FF25CF /* GameType.swift in Sources */,
 				59FDBABD29E8C1170012C945 /* Paddings.swift in Sources */,
 				5902DF6629E16278005046C6 /* Loader.swift in Sources */,
 				59F9D1C129C3D014002374E2 /* ezQuizApp.swift in Sources */,
@@ -730,7 +731,6 @@
 				59D82F6429EDF552009F72AF /* WelcomeViewModel.swift in Sources */,
 				59D82F6F29EF0DAF009F72AF /* AboutView.swift in Sources */,
 				59D82F7C29EF5D4F009F72AF /* Coordinator.swift in Sources */,
-				59AF97ED29FD706200FF25CF /* GameType.swift in Sources */,
 				59D82F7A29EF5C4B009F72AF /* ProfileRouter.swift in Sources */,
 				59D90A9329F5216400CA80DD /* DifficultyRouter.swift in Sources */,
 				59FDBAB829E779400012C945 /* KingfisherImageLoader.swift in Sources */,
