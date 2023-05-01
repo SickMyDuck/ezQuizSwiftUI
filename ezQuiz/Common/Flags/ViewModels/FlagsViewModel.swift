@@ -21,10 +21,11 @@ protocol FlagsViewModelProtocol: ObservableObject {
     var selectedAnswer: String { get }
     var isInformationVisible: Bool { get set }
     var isHintUsed: Bool { get set }
+    var timeRemaining: Double { get set }
 
     func onAppear()
-    func checkAnswer(answer: String)
-    func getButtonColor(answer: String) -> Color
+    func checkAnswer(_ answer: String)
+    func getButtonColor(for answer: String) -> Color
 }
 
 class FlagsViewModel: FlagsViewModelProtocol {
@@ -41,6 +42,7 @@ class FlagsViewModel: FlagsViewModelProtocol {
     @Published var selectedAnswer: String = ""
     @Published var isInformationVisible: Bool = false
     @Published var isHintUsed: Bool = false
+    @Published var timeRemaining = 30.0
 
     @Published private var questions: [Question] = []
     @Published private var currentQuestion: Question?
@@ -76,7 +78,7 @@ class FlagsViewModel: FlagsViewModelProtocol {
 
     // MARK: - VIEW MODEL METHODS
 
-    func checkAnswer(answer: String) {
+    func checkAnswer(_ answer: String) {
 
         selectedAnswer = answer
 
@@ -89,7 +91,7 @@ class FlagsViewModel: FlagsViewModelProtocol {
         startNewQuestion()
     }
 
-    func getButtonColor(answer: String) -> Color {
+    func getButtonColor(for answer: String) -> Color {
 
         var buttonColor = Color.clear
 
@@ -103,7 +105,7 @@ class FlagsViewModel: FlagsViewModelProtocol {
 
     }
 
-    func isButtonAvailable(answer: String) -> Bool {
+    func isButtonAvailable(for answer: String) -> Bool {
         if isHintUsed && !self.wrongAnswersArray.isEmpty {
             if Array(wrongAnswersArray.prefix(2)).contains(answer) {
                 return false
@@ -175,8 +177,10 @@ class FlagsViewModel: FlagsViewModelProtocol {
                     self?.isQuizFinished = true
                 } else {
                     self?.isHintUsed = false
+                    self?.wrongAnswersArray = []
                     self?.currentQuestion = self?.questions[$0]
                     self?.isAnswered = false
+                    self?.timeRemaining = 30.0
                 }
             }
         }
@@ -201,6 +205,13 @@ class FlagsViewModel: FlagsViewModelProtocol {
                     array.shuffled()
                 }
             .assign(to: &$wrongAnswersArray)
+
+        $isQuizFinished
+            .filter{ $0 }
+            .sink { _ in
+                self.openResults()
+            }
+            .store(in: &cancellables)
     }
 
 }
@@ -210,5 +221,9 @@ extension FlagsViewModel {
 
     func openMenu() {
         router.openMenu(user: User.getSavedUser() ?? "")
+    }
+
+    private func openResults() {
+        router.openResultsView(points: self.correctAnswersCounter, difficulty: difficulty, gameType: GameType.flagGame)
     }
 }

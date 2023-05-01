@@ -12,7 +12,7 @@ class CoreDataHelper {
     private let persistentContainer: NSPersistentContainer
 
     init() {
-        persistentContainer = NSPersistentContainer(name: "NameOfYourDataModel")
+        persistentContainer = NSPersistentContainer(name: "QuizResults")
         persistentContainer.loadPersistentStores { _, error in
             if let error = error {
                 fatalError("Failed to load persistent stores: \(error)")
@@ -20,7 +20,7 @@ class CoreDataHelper {
         }
     }
 
-    // MARK: - Запись данных
+    // MARK: - Data Writing
 
     func saveRecord(date: Date, difficulty: Difficulties, gameType: GameType, result: Int) {
         let context = persistentContainer.viewContext
@@ -39,7 +39,7 @@ class CoreDataHelper {
         }
     }
 
-    // MARK: - Получение данных
+    // MARK: - Data Reading
 
     func getRecords(for difficulty: Difficulties, and gameType: GameType) -> [QuizResult] {
         let context = persistentContainer.viewContext
@@ -55,4 +55,28 @@ class CoreDataHelper {
             fatalError("Failed to fetch records: \(error)")
         }
     }
+
+    // MARK: - Data Deletion
+    func deleteRecord(difficulty: Difficulties, gameType: GameType) {
+
+        let context = persistentContainer.viewContext
+
+        let request: NSFetchRequest<QuizResult> = QuizResult.fetchRequest()
+        request.predicate = NSPredicate(format: "difficulty == %@ AND gameType == %@", difficulty.rawValue, gameType.rawValue)
+
+        do {
+            let records = try context.fetch(request)
+            for record in records {
+                context.delete(record)
+            }
+            do {
+                try context.save()
+            } catch let saveError {
+                print("Failed to save context: \(saveError)")
+            }
+        } catch let fetchError {
+            print("Failed to fetch records: \(fetchError)")
+        }
+    }
+
 }

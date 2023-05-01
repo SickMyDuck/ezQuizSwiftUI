@@ -15,4 +15,10 @@ class FlagsRouter: FlagsRouterProtocol {
     func openMenu(user: String) {
         Coordinator.navigateTo(destination: MenuView(viewModel: MenuViewModel()))
    }
+
+    func openResultsView(points: Int, difficulty: Difficulties, gameType: GameType) {
+        let resultsViewModel = ResultsViewModel(points: points, difficulty: difficulty, gameType: gameType)
+        let resultsView = ResultsView(viewModel: resultsViewModel)
+        Coordinator.navigateTo(destination: resultsView)
+    }
 }

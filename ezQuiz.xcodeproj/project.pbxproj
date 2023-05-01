@@ -23,6 +23,11 @@
 		59A8D0BA29FB330900C75569 /* QuizResults.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 59A8D0B829FB330800C75569 /* QuizResults.xcdatamodeld */; };
 		59AF97EB29FD6D7900FF25CF /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AF97EA29FD6D7900FF25CF /* CoreDataHelper.swift */; };
 		59AF97EF29FE6B4300FF25CF /* GameType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AF97EE29FE6B4300FF25CF /* GameType.swift */; };
+		59AF97F129FE93DB00FF25CF /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AF97F029FE93DB00FF25CF /* TimerView.swift */; };
+		59AF97F429FF203500FF25CF /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AF97F329FF203500FF25CF /* ResultsView.swift */; };
+		59AF97F629FF204200FF25CF /* ResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AF97F529FF204200FF25CF /* ResultsViewModel.swift */; };
+		59AF97F829FF206E00FF25CF /* ResultsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AF97F729FF206E00FF25CF /* ResultsRouter.swift */; };
+		59AF97FA29FF2C4D00FF25CF /* ResultItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AF97F929FF2C4D00FF25CF /* ResultItem.swift */; };
 		59D82F5B29EDF0C7009F72AF /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D82F5A29EDF0C7009F72AF /* UserView.swift */; };
 		59D82F5E29EDF32F009F72AF /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D82F5D29EDF32F009F72AF /* WelcomeView.swift */; };
 		59D82F6029EDF4B2009F72AF /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D82F5F29EDF4B2009F72AF /* StartView.swift */; };
@@ -98,6 +103,11 @@
 		59A8D0B929FB330800C75569 /* QuizResults.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = QuizResults.xcdatamodel; sourceTree = "<group>"; };
 		59AF97EA29FD6D7900FF25CF /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		59AF97EE29FE6B4300FF25CF /* GameType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameType.swift; sourceTree = "<group>"; };
+		59AF97F029FE93DB00FF25CF /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		59AF97F329FF203500FF25CF /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
+		59AF97F529FF204200FF25CF /* ResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewModel.swift; sourceTree = "<group>"; };
+		59AF97F729FF206E00FF25CF /* ResultsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsRouter.swift; sourceTree = "<group>"; };
+		59AF97F929FF2C4D00FF25CF /* ResultItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultItem.swift; sourceTree = "<group>"; };
 		59D82F5A29EDF0C7009F72AF /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		59D82F5D29EDF32F009F72AF /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		59D82F5F29EDF4B2009F72AF /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
@@ -176,6 +186,7 @@
 				5902DF5929E0D0C1005046C6 /* FlagsView.swift */,
 				59D90A8729F19FDD00CA80DD /* PauseView.swift */,
 				59D90A9429F5E6AE00CA80DD /* InformationView.swift */,
+				59AF97F029FE93DB00FF25CF /* TimerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -293,6 +304,17 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		59AF97F229FF202500FF25CF /* Results */ = {
+			isa = PBXGroup;
+			children = (
+				59AF97F329FF203500FF25CF /* ResultsView.swift */,
+				59AF97F529FF204200FF25CF /* ResultsViewModel.swift */,
+				59AF97F729FF206E00FF25CF /* ResultsRouter.swift */,
+				59AF97F929FF2C4D00FF25CF /* ResultItem.swift */,
+			);
+			path = Results;
+			sourceTree = "<group>";
+		};
 		59D82F5729EDEF89009F72AF /* User */ = {
 			isa = PBXGroup;
 			children = (
@@ -325,6 +347,7 @@
 		59D82F6C29EF075E009F72AF /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				59AF97F229FF202500FF25CF /* Results */,
 				59D90A9629F5EE0100CA80DD /* Scoreboard */,
 				59D82F7229EF5117009F72AF /* Profile */,
 				59D82F6D29EF0783009F72AF /* About */,
@@ -704,21 +727,25 @@
 				59D82F7429EF519C009F72AF /* ProfileView.swift in Sources */,
 				5902DF5829E0D08E005046C6 /* FlagsViewModel.swift in Sources */,
 				59D90A9129F3D99E00CA80DD /* MenuRouter.swift in Sources */,
+				59AF97F429FF203500FF25CF /* ResultsView.swift in Sources */,
 				59D90A9829F5EE1D00CA80DD /* ScoreboardView.swift in Sources */,
 				59D90A8829F19FDD00CA80DD /* PauseView.swift in Sources */,
 				59D82F6929EEE5F4009F72AF /* DifficultyViewModel.swift in Sources */,
 				5902DF5E29E0D4AA005046C6 /* Colors.swift in Sources */,
 				59D90A8F29F35A1000CA80DD /* ProfileButtonStyle.swift in Sources */,
+				59AF97F829FF206E00FF25CF /* ResultsRouter.swift in Sources */,
 				59D82F6729EEE5DB009F72AF /* DifficultyView.swift in Sources */,
 				59D82F7629EF51BB009F72AF /* ProfileViewModel.swift in Sources */,
 				594EEB7A29D63793006F6AC7 /* Difficulties.swift in Sources */,
 				59AF97EB29FD6D7900FF25CF /* CoreDataHelper.swift in Sources */,
 				59D82F7829EF56CF009F72AF /* User.swift in Sources */,
 				5902DF6429E0EC91005046C6 /* QuestionItemModel.swift in Sources */,
+				59AF97FA29FF2C4D00FF25CF /* ResultItem.swift in Sources */,
 				594EEB8129D63CB4006F6AC7 /* MenuView.swift in Sources */,
 				59D82F5B29EDF0C7009F72AF /* UserView.swift in Sources */,
 				5902DF5A29E0D0C1005046C6 /* FlagsView.swift in Sources */,
 				5902DF6229E0E3DA005046C6 /* FlagsRouter.swift in Sources */,
+				59AF97F629FF204200FF25CF /* ResultsViewModel.swift in Sources */,
 				59D82F7129EF0DBE009F72AF /* AboutViewModel.swift in Sources */,
 				59D82F6029EDF4B2009F72AF /* StartView.swift in Sources */,
 				59F9D1C329C3D014002374E2 /* ContentView.swift in Sources */,
@@ -726,6 +753,7 @@
 				59FDBABD29E8C1170012C945 /* Paddings.swift in Sources */,
 				5902DF6629E16278005046C6 /* Loader.swift in Sources */,
 				59F9D1C129C3D014002374E2 /* ezQuizApp.swift in Sources */,
+				59AF97F129FE93DB00FF25CF /* TimerView.swift in Sources */,
 				59D90A9A29F5EE2D00CA80DD /* ScoreboardViewModel.swift in Sources */,
 				594EEB7C29D63A38006F6AC7 /* MenuViewModel.swift in Sources */,
 				59D82F6429EDF552009F72AF /* WelcomeViewModel.swift in Sources */,

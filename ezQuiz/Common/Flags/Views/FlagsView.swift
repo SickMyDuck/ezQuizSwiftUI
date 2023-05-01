@@ -26,10 +26,10 @@ struct FlagsView: View {
                     Text("Question \(viewModel.questionsCounter + (viewModel.questionsCounter == 10 ? 0 : 1))")
                         .foregroundColor(.white)
                         .font(.headline)
-
                 }
-                .padding(Paddings.large)
+                .padding(.top, Paddings.large)
 
+                TimerView(with: viewModel)
 
                 Image(uiImage: viewModel.flagImage)
                     .resizable()
@@ -37,37 +37,36 @@ struct FlagsView: View {
                     .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width * (viewModel.flagImage.size.height / viewModel.flagImage.size.width))
                     .padding(.vertical, Paddings.large)
 
-
-
                 Spacer()
 
                 LazyVGrid(columns: columns) {
                     ForEach(viewModel.answers, id: \.self) { answer in
                         Button(action: {
-                            viewModel.checkAnswer(answer: answer)
+                            viewModel.checkAnswer(answer)
                         }) {
                             Text(answer)
                         }
                         .background(
-                            viewModel.getButtonColor(answer: answer)
+                            viewModel.getButtonColor(for: answer)
                         )
                         .padding(.horizontal, Paddings.large)
                         .padding(.bottom, Paddings.medium)
                         .buttonStyle(MainButtonStyle())
-                        .disabled(viewModel.isAnswered || !viewModel.isButtonAvailable(answer: answer))
-                        .opacity(viewModel.isButtonAvailable(answer: answer) ? 1 : 0)
+                        .disabled(viewModel.isAnswered || !viewModel.isButtonAvailable(for: answer))
+                        .opacity(viewModel.isButtonAvailable(for: answer) ? 1 : 0)
                         .animation(.easeInOut(duration: 0.5))
                     }
                 }
                 .padding(.bottom, Paddings.large)
             }
-            .navigationBarItems(leading: Button {
-                viewModel.isHintUsed.toggle()
-            } label: {
-                Image(systemName: "50.circle")
-                    .resizable()
-                    .frame(width: 30, height: 30)
-            }
+            .navigationBarItems(leading:
+                Button {
+                    viewModel.isHintUsed.toggle()
+                } label: {
+                    Image(systemName: "50.circle")
+                        .resizable()
+                        .frame(width: 30, height: 30)
+                }
                 .padding(Paddings.large)
                 .foregroundColor(.white)
             )
@@ -90,7 +89,7 @@ struct FlagsView: View {
                         .frame(width: 30, height: 30)
                 } // Pause
                 .frame(alignment: .trailing)
-                .padding(Paddings.large)
+                .padding(Paddings.small)
                 .foregroundColor(.white)
             }
             )

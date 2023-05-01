@@ -15,32 +15,30 @@ struct ScoreboardView: View {
         VStack {
             Text("Guess the flag:")
                 .font(.headline)
-                .background(.black)
             List {
                 Section(header: Text("Easy")) {
-                    Text("\(viewModel.bestScoreEasy)")
+                    Text("\(viewModel.bestScoreEasyFlagGame)")
                 }
                 Section(header: Text("Medium")) {
-                    Text("\(viewModel.bestScoreMedium)")
+                    Text("\(viewModel.bestScoreMediumFlagGame)")
                 }
                 Section(header: Text("Hard")) {
-                    Text("\(viewModel.bestScoreHard)")
+                    Text("\(viewModel.bestScoreHardFlagGame)")
                 }
             }
             .listStyle(GroupedListStyle())
 
                 Text("Guess the country:")
                     .font(.headline)
-            .background(.black)
             List {
                 Section(header: Text("Easy")) {
-                    Text("\(viewModel.bestScoreEasy)")
+                    Text("\(viewModel.bestScoreEasyCountryGame)")
                 }
                 Section(header: Text("Medium")) {
-                    Text("\(viewModel.bestScoreMedium)")
+                    Text("\(viewModel.bestScoreMediumCountryGame)")
                 }
                 Section(header: Text("Hard")) {
-                    Text("\(viewModel.bestScoreHard)")
+                    Text("\(viewModel.bestScoreHardCountryGame)")
                 }
             }
             .listStyle(GroupedListStyle())
@@ -49,7 +47,7 @@ struct ScoreboardView: View {
         .navigationBarTitle("Best score")
         .foregroundColor(.white)
         .onAppear {
-            viewModel.loadBestScores()
+            viewModel.onAppear()
         }
         .navigationBarItems(
             leading:

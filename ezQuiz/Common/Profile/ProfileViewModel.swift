@@ -11,7 +11,7 @@ import Combine
 class ProfileViewModel: ObservableObject {
     @Published var user: String = ""
 
-    private let router = profileRouter()
+    private let router = ProfileRouter()
 
     private var cancellables = Set<AnyCancellable>()
 

@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class profileRouter {
+class ProfileRouter {
 
     func openMenu(user: String) {
         Coordinator.navigateTo(destination: MenuView(viewModel: MenuViewModel()))

@@ -9,16 +9,36 @@ import Foundation
 
 class ScoreboardViewModel: ObservableObject {
 
-    let router = ScoreboardRouter()
+    @Published var bestScoreEasyFlagGame: Int = 0
+    @Published var bestScoreMediumFlagGame: Int = 0
+    @Published var bestScoreHardFlagGame: Int = 0
+    @Published var bestScoreEasyCountryGame: Int = 0
+    @Published var bestScoreMediumCountryGame: Int = 0
+    @Published var bestScoreHardCountryGame: Int = 0
 
-    @Published var bestScoreEasy: Int = 0
-    @Published var bestScoreMedium: Int = 0
-    @Published var bestScoreHard: Int = 0
+    private let coreDataHelper = CoreDataHelper()
+    private let router = ScoreboardRouter()
+    
+    func onAppear() {
+        loadBestScores()
+    }
 
     func loadBestScores() {
-        bestScoreEasy = User.loadBestScore(key: .easy) ?? 0
-        bestScoreMedium = User.loadBestScore(key: .medium) ?? 0
-        bestScoreHard = User.loadBestScore(key: .hard) ?? 0
+        bestScoreEasyFlagGame = getScore(difficulty: .easy, gameType: .flagGame)
+        bestScoreMediumFlagGame = getScore(difficulty: .medium, gameType: .flagGame)
+        bestScoreHardFlagGame = getScore(difficulty: .hard, gameType: .flagGame)
+        bestScoreEasyCountryGame = getScore(difficulty: .easy, gameType: .countryGame)
+        bestScoreMediumCountryGame = getScore(difficulty: .medium, gameType: .countryGame)
+        bestScoreHardCountryGame = getScore(difficulty: .hard, gameType: .countryGame)
+    }
+
+    func getScore(difficulty: Difficulties, gameType: GameType) -> Int {
+        var score = 0
+        let results = coreDataHelper.getRecords(for: difficulty, and: gameType)
+        if !results.isEmpty {
+            score = Int(results[0].result)
+        }
+        return score
     }
 }
 
