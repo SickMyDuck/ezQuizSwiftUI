@@ -268,7 +268,7 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		5994C3D929DCDA88003F384F /* Flags */ = {
+		5994C3D929DCDA88003F384F /* FlagGame */ = {
 			isa = PBXGroup;
 			children = (
 				5902DF6029E0E3CC005046C6 /* Router */,
@@ -276,7 +276,7 @@
 				5994C3DB29DCDA9E003F384F /* ViewModels */,
 				5994C3DA29DCDA92003F384F /* Models */,
 			);
-			path = Flags;
+			path = FlagGame;
 			sourceTree = "<group>";
 		};
 		5994C3DA29DCDA92003F384F /* Models */ = {
@@ -344,20 +344,21 @@
 			path = Difficulty;
 			sourceTree = "<group>";
 		};
-		59D82F6C29EF075E009F72AF /* Common */ = {
+		59D82F6C29EF075E009F72AF /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				59DAB5582A01BD6E0070BC54 /* CountryGame */,
 				59AF97F229FF202500FF25CF /* Results */,
 				59D90A9629F5EE0100CA80DD /* Scoreboard */,
 				59D82F7229EF5117009F72AF /* Profile */,
 				59D82F6D29EF0783009F72AF /* About */,
 				594EEB7729D63775006F6AC7 /* Menu */,
-				5994C3D929DCDA88003F384F /* Flags */,
+				5994C3D929DCDA88003F384F /* FlagGame */,
 				59D82F5729EDEF89009F72AF /* User */,
 				59D82F5C29EDF2CE009F72AF /* Welcome */,
 				59D82F6529EEE5A6009F72AF /* Difficulty */,
 			);
-			path = Common;
+			path = Modules;
 			sourceTree = "<group>";
 		};
 		59D82F6D29EF0783009F72AF /* About */ = {
@@ -398,6 +399,13 @@
 			path = Scoreboard;
 			sourceTree = "<group>";
 		};
+		59DAB5582A01BD6E0070BC54 /* CountryGame */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CountryGame;
+			sourceTree = "<group>";
+		};
 		59F9D1B429C3D013002374E2 = {
 			isa = PBXGroup;
 			children = (
@@ -424,7 +432,7 @@
 			isa = PBXGroup;
 			children = (
 				5902DF5B29E0D480005046C6 /* Helpers */,
-				59D82F6C29EF075E009F72AF /* Common */,
+				59D82F6C29EF075E009F72AF /* Modules */,
 				59F9D1C029C3D014002374E2 /* ezQuizApp.swift */,
 				59F9D1C229C3D014002374E2 /* ContentView.swift */,
 				59F9D1C429C3D01B002374E2 /* Assets.xcassets */,

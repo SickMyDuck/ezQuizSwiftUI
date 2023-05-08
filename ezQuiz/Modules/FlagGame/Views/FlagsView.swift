@@ -16,8 +16,9 @@ struct FlagsView: View {
     ]
 
     var body: some View {
-        ZStack {
+        ZStack{
             VStack {
+                Spacer()
                 HStack {
                     Text("Correct answers:  \(viewModel.correctAnswersCounter)")
                         .foregroundColor(.green)
@@ -27,15 +28,19 @@ struct FlagsView: View {
                         .foregroundColor(.white)
                         .font(.headline)
                 }
-                .padding(.top, Paddings.large)
+                .padding(.top, Paddings.medium)
 
                 TimerView(with: viewModel)
 
                 Image(uiImage: viewModel.flagImage)
                     .resizable()
                     .scaledToFit()
-                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width * (viewModel.flagImage.size.height / viewModel.flagImage.size.width))
-                    .padding(.vertical, Paddings.large)
+                    .frame(width: UIScreen.main.bounds.width, height: 265)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(Color.gray, lineWidth: 2)
+                    )
+                    .padding(.vertical, Paddings.medium)
 
                 Spacer()
 
@@ -54,19 +59,19 @@ struct FlagsView: View {
                         .buttonStyle(MainButtonStyle())
                         .disabled(viewModel.isAnswered || !viewModel.isButtonAvailable(for: answer))
                         .opacity(viewModel.isButtonAvailable(for: answer) ? 1 : 0)
-                        .animation(.easeInOut(duration: 0.5))
+                        .animation(viewModel.shouldAnimate ? .easeInOut(duration: 0.5) : .none)
                     }
                 }
                 .padding(.bottom, Paddings.large)
             }
             .navigationBarItems(leading:
-                Button {
-                    viewModel.isHintUsed.toggle()
-                } label: {
-                    Image(systemName: "50.circle")
-                        .resizable()
-                        .frame(width: 30, height: 30)
-                }
+                                    Button {
+                viewModel.isHintUsed.toggle()
+            } label: {
+                Image(systemName: "50.circle")
+                    .resizable()
+                    .frame(width: 30, height: 30)
+            }
                 .padding(Paddings.large)
                 .foregroundColor(.white)
             )
@@ -95,6 +100,8 @@ struct FlagsView: View {
             )
             .sheet(isPresented: $viewModel.isInformationVisible) {
                 InformationView()
+                    .preferredColorScheme(.dark)
+                    .padding(Paddings.small)
             }
             .navigationBarBackButtonHidden(true)
             .onAppear(perform: viewModel.onAppear)
@@ -102,7 +109,6 @@ struct FlagsView: View {
             if viewModel.isMenuVisible {
                 PauseView(viewModel: viewModel)
             }
-
         }
     }
 }

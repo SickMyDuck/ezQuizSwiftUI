@@ -43,6 +43,7 @@ class FlagsViewModel: FlagsViewModelProtocol {
     @Published var isInformationVisible: Bool = false
     @Published var isHintUsed: Bool = false
     @Published var timeRemaining = 30.0
+    @Published var shouldAnimate: Bool = false
 
     @Published private var questions: [Question] = []
     @Published private var currentQuestion: Question?
@@ -162,7 +163,7 @@ class FlagsViewModel: FlagsViewModelProtocol {
 
         $questions.sink { [weak self] question in
             guard !question.isEmpty else { return }
-            self?.flagUrl = URL(string: "https://sickmyduck.ru/flagImages/\(question[0].flagImage)")
+            self?.flagUrl = URL(string: "https://sickmyduck.ru/flag-images/\(question[0].flagImage)")
             self?.correctAnswer = question[0].correctAnswer
             self?.answers = question[0].answers.shuffled()
             if let flagUrl = self?.flagUrl {
@@ -187,7 +188,7 @@ class FlagsViewModel: FlagsViewModelProtocol {
         .store(in: &cancellables)
 
         $currentQuestion.sink { [weak self] in
-            self?.flagUrl = URL(string: "https://sickmyduck.ru/flagImages/\($0?.flagImage ?? "")")
+            self?.flagUrl = URL(string: "https://sickmyduck.ru/flag_images/\($0?.flagImage ?? "")")
             self?.correctAnswer = $0?.correctAnswer ?? ""
             self?.answers = $0?.answers.shuffled() ?? []
             if let flagUrl = self?.flagUrl, let _ = $0?.flagImage {
@@ -210,6 +211,20 @@ class FlagsViewModel: FlagsViewModelProtocol {
             .filter{ $0 }
             .sink { _ in
                 self.openResults()
+            }
+            .store(in: &cancellables)
+
+        $isHintUsed
+            .filter { $0 }
+            .sink { _ in
+                self.shouldAnimate = true
+            }
+            .store(in: &cancellables)
+
+        $isAnswered
+            .filter { $0 }
+            .sink { _ in
+                self.shouldAnimate = false
             }
             .store(in: &cancellables)
     }

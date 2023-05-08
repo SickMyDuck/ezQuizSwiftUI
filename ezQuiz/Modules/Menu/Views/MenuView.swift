@@ -53,6 +53,7 @@ struct MenuView: View {
                             AboutView()
                         }
                         .padding(Paddings.small)
+                        .preferredColorScheme(.dark)
                     }
                 }
             }
