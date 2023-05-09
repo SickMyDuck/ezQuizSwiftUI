@@ -1,16 +1,16 @@
 //
-//  FlagsViewModel.swift
+//  CountryViewModel.swift
 //  ezQuiz
 //
-//  Created by Ruslan Sadritdinov on 08.04.2023.
+//  Created by Ruslan Sadritdinov on 09.05.2023.
 //
 
 import UIKit
 import Combine
 import SwiftUI
 
-protocol FlagsViewModelProtocol: ObservableObject, GameLogicProtocol {
-    var flagUrl: URL? { get }
+protocol CountryViewModelProtocol: ObservableObject, GameLogicProtocol {
+    var country: String { get }
     var answers: [String] { get }
     var correctAnswer: String { get }
     var flagImage: UIImage { get }
@@ -22,27 +22,27 @@ protocol FlagsViewModelProtocol: ObservableObject, GameLogicProtocol {
 
 }
 
-final class FlagsViewModel: GameLogic, FlagsViewModelProtocol {
+final class CountryViewModel: GameLogic, CountryViewModelProtocol {
 
-    @Published var flagUrl: URL?
+    @Published var country: String
     @Published var answers: [String] = []
     @Published var correctAnswer: String = ""
     @Published var flagImage: UIImage = UIImage(named: "Placeholder")!
     @Published var selectedAnswer: String = ""
 
-    @Published private var questions: [Question] = []
-    @Published private var currentQuestion: Question?
+    @Published private var questions: [CountryQuestion] = []
+    @Published private var currentQuestion: CountryQuestion?
     @Published private var difficulty: Difficulties
     @Published private var wrongAnswersArray: [String] = []
 
     private let imageLoader: ImageLoader
-    private let router: FlagsRouterProtocol
+    private let router: CountryRouterProtocol
 
     private var cancellables: Set<AnyCancellable> = .init()
 
     init(difficulty: Difficulties,
                   imageLoader: ImageLoader = KingfisherImageLoader.shared,
-                  router: FlagsRouterProtocol = FlagsRouter()) {
+                  router: CountryRouterProtocol = CountryRouter()) {
 
         self.difficulty = difficulty
         self.imageLoader = imageLoader
@@ -110,8 +110,8 @@ final class FlagsViewModel: GameLogic, FlagsViewModelProtocol {
 
     private func loadQuestions(amount: Int, difficulty: Difficulties) {
         // FIXME: decompose URL
-        if let url = URL(string: "https://sickmyduck.ru/api/flag_questions?amount=\(amount)&difficulty=\(difficulty)") {
-            let loader = Loader<FlagQuestionItemModel>()
+        if let url = URL(string: "https://sickmyduck.ru/api/country_questions?amount=\(amount)&difficulty=\(difficulty)") {
+            let loader = Loader<CountryQuestionItemModel>()
             loader.load(url: url) { result in
                 switch result {
                 case .success(let response):
@@ -145,7 +145,7 @@ final class FlagsViewModel: GameLogic, FlagsViewModelProtocol {
 
         $questions.sink { [weak self] question in
             guard !question.isEmpty else { return }
-            self?.flagUrl = URL(string: "https://sickmyduck.ru/flag-images/\(question[0].flagImage)")
+            self?.country = URL(string: "https://sickmyduck.ru/flag-images/\(question[0].flagImage)")
             self?.correctAnswer = question[0].correctAnswer
             self?.answers = question[0].answers.shuffled()
             if let flagUrl = self?.flagUrl {
@@ -223,11 +223,12 @@ final class FlagsViewModel: GameLogic, FlagsViewModelProtocol {
                 self.checkAnswer("")
             }
             .store(in: &cancellables)
+        
     }
 
 }
 
-extension FlagsViewModel {
+extension CountryViewModel {
     // MARK: - Router Methods
 
     func openMenu() {

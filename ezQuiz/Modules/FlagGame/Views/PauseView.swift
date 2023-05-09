@@ -8,8 +8,13 @@
 import Foundation
 import SwiftUI
 
-struct PauseView: View {
-    @ObservedObject var viewModel: FlagsViewModel
+struct PauseView<ViewModel: GameLogicProtocol>: View {
+
+    @ObservedObject var viewModel: ViewModel
+
+    init(viewModel: ViewModel) {
+        self.viewModel = viewModel
+    }
 
     var body: some View {
         Color.black.opacity(0.5)
@@ -25,7 +30,7 @@ struct PauseView: View {
             .font(Fonts.roboto)
             .padding(.bottom)
             Button("Back to Menu") {
-                viewModel.openMenu()
+                viewModel.needToOpenMenu.toggle()
             }
             .font(Fonts.roboto)
         }

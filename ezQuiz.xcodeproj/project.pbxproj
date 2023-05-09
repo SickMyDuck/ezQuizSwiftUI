@@ -11,8 +11,13 @@
 		5902DF5A29E0D0C1005046C6 /* FlagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5902DF5929E0D0C1005046C6 /* FlagsView.swift */; };
 		5902DF5E29E0D4AA005046C6 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5902DF5D29E0D4AA005046C6 /* Colors.swift */; };
 		5902DF6229E0E3DA005046C6 /* FlagsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5902DF6129E0E3D9005046C6 /* FlagsRouter.swift */; };
-		5902DF6429E0EC91005046C6 /* QuestionItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5902DF6329E0EC91005046C6 /* QuestionItemModel.swift */; };
+		5902DF6429E0EC91005046C6 /* FlagQuestionItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5902DF6329E0EC91005046C6 /* FlagQuestionItemModel.swift */; };
 		5902DF6629E16278005046C6 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5902DF6529E16278005046C6 /* Loader.swift */; };
+		5933D5CE2A09B854002AF912 /* CountryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933D5CD2A09B854002AF912 /* CountryViewModel.swift */; };
+		5933D5D02A09B86B002AF912 /* CountryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933D5CF2A09B86B002AF912 /* CountryView.swift */; };
+		5933D5D32A09BBED002AF912 /* GameLogicProtocol+GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933D5D22A09BBED002AF912 /* GameLogicProtocol+GameLogic.swift */; };
+		5933D5D52A09C0CB002AF912 /* CountryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933D5D42A09C0CB002AF912 /* CountryRouter.swift */; };
+		5933D5D72A0A3BCF002AF912 /* CountryQuestionItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933D5D62A0A3BCF002AF912 /* CountryQuestionItemModel.swift */; };
 		594EEB7629D636AE006F6AC7 /* MenuScreenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594EEB7529D636AE006F6AC7 /* MenuScreenTests.swift */; };
 		594EEB7A29D63793006F6AC7 /* Difficulties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594EEB7929D63793006F6AC7 /* Difficulties.swift */; };
 		594EEB7C29D63A38006F6AC7 /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594EEB7B29D63A38006F6AC7 /* MenuViewModel.swift */; };
@@ -91,8 +96,13 @@
 		5902DF5929E0D0C1005046C6 /* FlagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagsView.swift; sourceTree = "<group>"; };
 		5902DF5D29E0D4AA005046C6 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		5902DF6129E0E3D9005046C6 /* FlagsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagsRouter.swift; sourceTree = "<group>"; };
-		5902DF6329E0EC91005046C6 /* QuestionItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionItemModel.swift; sourceTree = "<group>"; };
+		5902DF6329E0EC91005046C6 /* FlagQuestionItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagQuestionItemModel.swift; sourceTree = "<group>"; };
 		5902DF6529E16278005046C6 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
+		5933D5CD2A09B854002AF912 /* CountryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewModel.swift; sourceTree = "<group>"; };
+		5933D5CF2A09B86B002AF912 /* CountryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryView.swift; sourceTree = "<group>"; };
+		5933D5D22A09BBED002AF912 /* GameLogicProtocol+GameLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameLogicProtocol+GameLogic.swift"; sourceTree = "<group>"; };
+		5933D5D42A09C0CB002AF912 /* CountryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryRouter.swift; sourceTree = "<group>"; };
+		5933D5D62A0A3BCF002AF912 /* CountryQuestionItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryQuestionItemModel.swift; sourceTree = "<group>"; };
 		594EEB7529D636AE006F6AC7 /* MenuScreenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScreenTests.swift; sourceTree = "<group>"; };
 		594EEB7929D63793006F6AC7 /* Difficulties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Difficulties.swift; sourceTree = "<group>"; };
 		594EEB7B29D63A38006F6AC7 /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
@@ -194,6 +204,7 @@
 		5902DF5B29E0D480005046C6 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				5933D5D12A09BBD1002AF912 /* Game logic */,
 				59A8D0B729FB329700C75569 /* Data */,
 				59D90A8D29F359F000CA80DD /* Styles */,
 				5902DF5F29E0E21F005046C6 /* Network */,
@@ -229,6 +240,14 @@
 				5902DF6129E0E3D9005046C6 /* FlagsRouter.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		5933D5D12A09BBD1002AF912 /* Game logic */ = {
+			isa = PBXGroup;
+			children = (
+				5933D5D22A09BBED002AF912 /* GameLogicProtocol+GameLogic.swift */,
+			);
+			path = "Game logic";
 			sourceTree = "<group>";
 		};
 		594EEB7729D63775006F6AC7 /* Menu */ = {
@@ -282,7 +301,7 @@
 		5994C3DA29DCDA92003F384F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				5902DF6329E0EC91005046C6 /* QuestionItemModel.swift */,
+				5902DF6329E0EC91005046C6 /* FlagQuestionItemModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -402,6 +421,10 @@
 		59DAB5582A01BD6E0070BC54 /* CountryGame */ = {
 			isa = PBXGroup;
 			children = (
+				5933D5CD2A09B854002AF912 /* CountryViewModel.swift */,
+				5933D5CF2A09B86B002AF912 /* CountryView.swift */,
+				5933D5D42A09C0CB002AF912 /* CountryRouter.swift */,
+				5933D5D62A0A3BCF002AF912 /* CountryQuestionItemModel.swift */,
 			);
 			path = CountryGame;
 			sourceTree = "<group>";
@@ -733,6 +756,7 @@
 				59A8D0B629F990A400C75569 /* ScoreboardRouter.swift in Sources */,
 				59FDBABF29EA0C7B0012C945 /* Fonts.swift in Sources */,
 				59D82F7429EF519C009F72AF /* ProfileView.swift in Sources */,
+				5933D5D52A09C0CB002AF912 /* CountryRouter.swift in Sources */,
 				5902DF5829E0D08E005046C6 /* FlagsViewModel.swift in Sources */,
 				59D90A9129F3D99E00CA80DD /* MenuRouter.swift in Sources */,
 				59AF97F429FF203500FF25CF /* ResultsView.swift in Sources */,
@@ -741,13 +765,14 @@
 				59D82F6929EEE5F4009F72AF /* DifficultyViewModel.swift in Sources */,
 				5902DF5E29E0D4AA005046C6 /* Colors.swift in Sources */,
 				59D90A8F29F35A1000CA80DD /* ProfileButtonStyle.swift in Sources */,
+				5933D5D32A09BBED002AF912 /* GameLogicProtocol+GameLogic.swift in Sources */,
 				59AF97F829FF206E00FF25CF /* ResultsRouter.swift in Sources */,
 				59D82F6729EEE5DB009F72AF /* DifficultyView.swift in Sources */,
 				59D82F7629EF51BB009F72AF /* ProfileViewModel.swift in Sources */,
 				594EEB7A29D63793006F6AC7 /* Difficulties.swift in Sources */,
 				59AF97EB29FD6D7900FF25CF /* CoreDataHelper.swift in Sources */,
 				59D82F7829EF56CF009F72AF /* User.swift in Sources */,
-				5902DF6429E0EC91005046C6 /* QuestionItemModel.swift in Sources */,
+				5902DF6429E0EC91005046C6 /* FlagQuestionItemModel.swift in Sources */,
 				59AF97FA29FF2C4D00FF25CF /* ResultItem.swift in Sources */,
 				594EEB8129D63CB4006F6AC7 /* MenuView.swift in Sources */,
 				59D82F5B29EDF0C7009F72AF /* UserView.swift in Sources */,
@@ -756,6 +781,7 @@
 				59AF97F629FF204200FF25CF /* ResultsViewModel.swift in Sources */,
 				59D82F7129EF0DBE009F72AF /* AboutViewModel.swift in Sources */,
 				59D82F6029EDF4B2009F72AF /* StartView.swift in Sources */,
+				5933D5D02A09B86B002AF912 /* CountryView.swift in Sources */,
 				59F9D1C329C3D014002374E2 /* ContentView.swift in Sources */,
 				59AF97EF29FE6B4300FF25CF /* GameType.swift in Sources */,
 				59FDBABD29E8C1170012C945 /* Paddings.swift in Sources */,
@@ -763,10 +789,12 @@
 				59F9D1C129C3D014002374E2 /* ezQuizApp.swift in Sources */,
 				59AF97F129FE93DB00FF25CF /* TimerView.swift in Sources */,
 				59D90A9A29F5EE2D00CA80DD /* ScoreboardViewModel.swift in Sources */,
+				5933D5CE2A09B854002AF912 /* CountryViewModel.swift in Sources */,
 				594EEB7C29D63A38006F6AC7 /* MenuViewModel.swift in Sources */,
 				59D82F6429EDF552009F72AF /* WelcomeViewModel.swift in Sources */,
 				59D82F6F29EF0DAF009F72AF /* AboutView.swift in Sources */,
 				59D82F7C29EF5D4F009F72AF /* Coordinator.swift in Sources */,
+				5933D5D72A0A3BCF002AF912 /* CountryQuestionItemModel.swift in Sources */,
 				59D82F7A29EF5C4B009F72AF /* ProfileRouter.swift in Sources */,
 				59D90A9329F5216400CA80DD /* DifficultyRouter.swift in Sources */,
 				59FDBAB829E779400012C945 /* KingfisherImageLoader.swift in Sources */,

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TimerView<ViewModel: FlagsViewModel>: View {
+struct TimerView<ViewModel: GameLogicProtocol>: View {
     @ObservedObject private var viewModel: ViewModel
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
@@ -37,7 +37,7 @@ struct TimerView<ViewModel: FlagsViewModel>: View {
                     if viewModel.timeRemaining > 0 {
                         viewModel.timeRemaining -= 1
                     } else {
-                        viewModel.checkAnswer("")
+                        viewModel.timeOut.toggle()
                     }
                 }
         }

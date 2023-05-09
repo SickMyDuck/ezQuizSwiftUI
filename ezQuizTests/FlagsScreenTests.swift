@@ -32,7 +32,7 @@ final class FlagScreenTests: XCTestCase {
     func test_loadQuestions() {
         let decoder = JSONDecoder()
         let data = String.mockQuestionsData.data(using: .utf8)!
-        XCTAssertNoThrow(try! decoder.decode(QuestionItemModel.self, from: data))
+        XCTAssertNoThrow(try! decoder.decode(FlagQuestionItemModel.self, from: data))
     }
 
 }

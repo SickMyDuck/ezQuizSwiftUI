@@ -1,16 +1,17 @@
 //
-//  FlagView.swift
+//  CountryView.swift
 //  ezQuiz
 //
-//  Created by Ruslan Sadritdinov on 08.04.2023.
+//  Created by Ruslan Sadritdinov on 09.05.2023.
 //
+
 
 import SwiftUI
 import Combine
 
-struct FlagsView: View {
+struct CountryView: View {
 
-    @ObservedObject var viewModel: FlagsViewModel
+    @ObservedObject var viewModel: CountryViewModel
 
     let columns = [
         GridItem(.flexible())
@@ -30,16 +31,13 @@ struct FlagsView: View {
                         .font(.headline)
                 }
                 .padding(.top, Paddings.medium)
-                
-                Spacer()
 
                 TimerView(with: viewModel)
 
                 Image(uiImage: viewModel.flagImage)
                     .resizable()
                     .scaledToFit()
-                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/5)
-                    .cornerRadius(10)
+                    .frame(width: UIScreen.main.bounds.width, height: 265)
                     .overlay(
                         RoundedRectangle(cornerRadius: 10)
                             .stroke(Color.gray, lineWidth: 2)
@@ -117,8 +115,8 @@ struct FlagsView: View {
     }
 }
 
-struct FlagsView_Previews: PreviewProvider {
+struct CountryView_Previews: PreviewProvider {
     static var previews: some View {
-        FlagsView(viewModel: FlagsViewModel())
+        CountryView(viewModel: CountryViewModel())
     }
 }

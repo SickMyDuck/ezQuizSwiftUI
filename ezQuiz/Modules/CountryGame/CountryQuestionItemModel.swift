@@ -1,30 +1,26 @@
 //
-//  QuestionsModel.swift
+//  CountryItemModel.swift
 //  ezQuiz
 //
-//  Created by Ruslan Sadritdinov on 08.04.2023.
+//  Created by Ruslan Sadritdinov on 09.05.2023.
 //
 
 import Foundation
 
-struct QuestionItemModel: Decodable {
-    let questions: [Question]
+struct CountryQuestionItemModel: Decodable {
+    let questions: [CountryQuestion]
 }
 
-struct Question: Decodable {
-    let flagImage: String
+struct CountryQuestion: Decodable {
+    let country: String
     let answers: [String]
     let correctAnswer: String
     let difficulty: Difficulties
 
     enum CodingKeys: String, CodingKey {
-        case flagImage
+        case country
         case answers
         case correctAnswer = "correct_answer"
         case difficulty
     }
-}
-
-extension Difficulties: Decodable {
-
 }

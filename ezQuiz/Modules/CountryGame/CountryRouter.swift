@@ -1,18 +1,18 @@
 //
-//  FlagsRouter.swift
+//  CountryRouter.swift
 //  ezQuiz
 //
-//  Created by Ruslan Sadritdinov on 08.04.2023.
+//  Created by Ruslan Sadritdinov on 09.05.2023.
 //
 
 import UIKit
 
-protocol FlagsRouterProtocol {
+protocol CountryRouterProtocol {
     func openMenu(user: String)
     func openResultsView(points: Int, difficulty: Difficulties, gameType: GameType)
 }
 
-class FlagsRouter: FlagsRouterProtocol {
+class CountryRouter: CountryRouterProtocol {
     func openMenu(user: String) {
         Coordinator.navigateTo(destination: MenuView(viewModel: MenuViewModel()))
    }
