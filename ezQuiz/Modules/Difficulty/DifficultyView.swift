@@ -22,6 +22,9 @@ struct DifficultyView<ViewModel: DifficultyViewModelProtocol> : View {
                 NavigationLink(destination: FlagsView(viewModel: FlagsViewModel(difficulty: viewModel.selectedDifficulty)), isActive: $viewModel.showFlagsView) {
                     EmptyView()
                 }
+                NavigationLink(destination: CountryView(viewModel: CountryViewModel(difficulty: viewModel.selectedDifficulty)), isActive: $viewModel.showCountryView) {
+                    EmptyView()
+                }
                 ForEach(viewModel.difficultyOptions, id: \.self) { difficulty in
                     Button(action: {
                         viewModel.selectDifficulty(difficulty)
@@ -54,7 +57,7 @@ struct DifficultyView<ViewModel: DifficultyViewModelProtocol> : View {
 
 struct DifficultyView_Previews: PreviewProvider {
     static var previews: some View {
-        let viewModel = DifficultyViewModel()
+        let viewModel = DifficultyViewModel(gameType: .flagGame)
         DifficultyView(with: viewModel)
     }
 }

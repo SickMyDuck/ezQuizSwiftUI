@@ -58,8 +58,8 @@ class ResultsViewModel: ObservableObject {
         $difficulty
             .sink { difficulty in
                 self.items = [
-                    ResultItem(title: "Try again", destination: AnyView(FlagsView(viewModel: FlagsViewModel(difficulty: difficulty))), showNavBar: true),
-                    ResultItem(title: "Choose difficulty", destination: AnyView(DifficultyView(with: DifficultyViewModel())), showNavBar: false),
+                    ResultItem(title: "Try again", destination: self.gameType == .flagGame ? AnyView(FlagsView(viewModel: FlagsViewModel(difficulty: difficulty))) : AnyView(CountryView(viewModel: CountryViewModel(difficulty: difficulty))), showNavBar: true),
+                    ResultItem(title: "Choose difficulty", destination: AnyView(DifficultyView(with: DifficultyViewModel(gameType: self.gameType))), showNavBar: false),
                     ResultItem(title: "Main menu", destination: AnyView(MenuView(viewModel: MenuViewModel())), showNavBar: false)
                 ]
             }

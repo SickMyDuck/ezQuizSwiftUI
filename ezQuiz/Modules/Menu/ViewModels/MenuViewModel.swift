@@ -16,9 +16,8 @@ class MenuViewModel: MenuViewModelProtocol {
     private let router = MenuRouter()
 
     let items: [MenuItem] = [
-        MenuItem(title: "Guess the flag", destination: AnyView(DifficultyView(with: DifficultyViewModel())), showNavBar: false),
-        MenuItem(title: "Guess the country", destination: AnyView(DifficultyView(with: DifficultyViewModel()))
-                 , showNavBar: false),
+        MenuItem(title: "Guess the flag", destination: AnyView(DifficultyView(with: DifficultyViewModel(gameType: .flagGame))), showNavBar: false),
+        MenuItem(title: "Guess the country", destination: AnyView(DifficultyView(with: DifficultyViewModel(gameType: .countryGame))), showNavBar: false),
         MenuItem(title: "Scoreboard", destination: AnyView(ScoreboardView()), showNavBar: true)
     ]
 

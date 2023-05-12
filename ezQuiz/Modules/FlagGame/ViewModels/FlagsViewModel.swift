@@ -30,8 +30,8 @@ final class FlagsViewModel: GameLogic, FlagsViewModelProtocol {
     @Published var flagImage: UIImage = UIImage(named: "Placeholder")!
     @Published var selectedAnswer: String = ""
 
-    @Published private var questions: [Question] = []
-    @Published private var currentQuestion: Question?
+    @Published private var questions: [FlagQuestion] = []
+    @Published private var currentQuestion: FlagQuestion?
     @Published private var difficulty: Difficulties
     @Published private var wrongAnswersArray: [String] = []
 
@@ -145,7 +145,7 @@ final class FlagsViewModel: GameLogic, FlagsViewModelProtocol {
 
         $questions.sink { [weak self] question in
             guard !question.isEmpty else { return }
-            self?.flagUrl = URL(string: "https://sickmyduck.ru/flag-images/\(question[0].flagImage)")
+            self?.flagUrl = URL(string: "https://sickmyduck.ru/flag_images/\(question[0].flagImage)")
             self?.correctAnswer = question[0].correctAnswer
             self?.answers = question[0].answers.shuffled()
             if let flagUrl = self?.flagUrl {

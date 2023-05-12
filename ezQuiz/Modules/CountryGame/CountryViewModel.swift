@@ -10,10 +10,9 @@ import Combine
 import SwiftUI
 
 protocol CountryViewModelProtocol: ObservableObject, GameLogicProtocol {
-    var country: String { get }
-    var answers: [String] { get }
+    var country: String? { get }
+    var answers: [CountryAnswer] { get }
     var correctAnswer: String { get }
-    var flagImage: UIImage { get }
     var selectedAnswer: String { get }
 
     func onAppear()
@@ -24,16 +23,15 @@ protocol CountryViewModelProtocol: ObservableObject, GameLogicProtocol {
 
 final class CountryViewModel: GameLogic, CountryViewModelProtocol {
 
-    @Published var country: String
-    @Published var answers: [String] = []
+    @Published var country: String?
+    @Published var answers: [CountryAnswer] = []
     @Published var correctAnswer: String = ""
-    @Published var flagImage: UIImage = UIImage(named: "Placeholder")!
     @Published var selectedAnswer: String = ""
 
     @Published private var questions: [CountryQuestion] = []
     @Published private var currentQuestion: CountryQuestion?
     @Published private var difficulty: Difficulties
-    @Published private var wrongAnswersArray: [String] = []
+    @Published private var wrongAnswersArray: [CountryAnswer] = []
 
     private let imageLoader: ImageLoader
     private let router: CountryRouterProtocol
@@ -97,7 +95,7 @@ final class CountryViewModel: GameLogic, CountryViewModelProtocol {
 
     func isButtonAvailable(for answer: String) -> Bool {
         if isHintUsed && !self.wrongAnswersArray.isEmpty {
-            if Array(wrongAnswersArray.prefix(2)).contains(answer) {
+            if Array(wrongAnswersArray.prefix(2).map{$0.answer}).contains(answer) {
                 return false
             }
         }
@@ -126,17 +124,29 @@ final class CountryViewModel: GameLogic, CountryViewModelProtocol {
         }
     }
 
-    private func loadImageFromURL(_ url: URL) {
-        imageLoader.loadImage(from: url)
+    private func loadImagesFromURLs(_ urls: [String]) {
+        var answers = [String]()
+        let publishers = urls.map { answer in
+            answers.append(answer)
+            return imageLoader.loadImage(from: URL(string: "https://sickmyduck.ru/flag_images/\(answer)")!)
+        }
+        Publishers.Sequence(sequence: publishers)
+            .flatMap(maxPublishers: .max(10)) { $0 }
+            .collect()
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
                 guard case let .failure(error) = completion else { return }
                 print("Error: \(error.localizedDescription)")
-            }, receiveValue: { [weak self] image in
-                self?.flagImage = image ?? UIImage(named: "Placeholder")!
+            }, receiveValue: { [weak self] images in
+                self?.answers = images
+                    .compactMap { $0 }
+                    .enumerated()
+                    .map { CountryAnswer(image: $0.element, answer: answers[$0.offset]) }
             })
             .store(in: &cancellables)
     }
+
+
 
 
     override func setupBindings() {
@@ -145,12 +155,9 @@ final class CountryViewModel: GameLogic, CountryViewModelProtocol {
 
         $questions.sink { [weak self] question in
             guard !question.isEmpty else { return }
-            self?.country = URL(string: "https://sickmyduck.ru/flag-images/\(question[0].flagImage)")
+            self?.country = question[0].country
             self?.correctAnswer = question[0].correctAnswer
-            self?.answers = question[0].answers.shuffled()
-            if let flagUrl = self?.flagUrl {
-                self?.loadImageFromURL(flagUrl)
-            }
+            self?.loadImagesFromURLs(question[0].answers)
         }
         .store(in: &cancellables)
 
@@ -170,19 +177,16 @@ final class CountryViewModel: GameLogic, CountryViewModelProtocol {
         .store(in: &cancellables)
 
         $currentQuestion.sink { [weak self] in
-            self?.flagUrl = URL(string: "https://sickmyduck.ru/flag_images/\($0?.flagImage ?? "")")
+            self?.country = $0?.country ?? ""
             self?.correctAnswer = $0?.correctAnswer ?? ""
-            self?.answers = $0?.answers.shuffled() ?? []
-            if let flagUrl = self?.flagUrl, let _ = $0?.flagImage {
-                self?.loadImageFromURL(flagUrl)
-            }
             self?.selectedAnswer = ""
+            self?.loadImagesFromURLs($0?.answers ?? [])
         }
         .store(in: &cancellables)
 
         $answers
             .map { answers in
-                answers.filter { $0 != self.correctAnswer }
+                answers.filter { $0.answer != self.correctAnswer }
             }
             .map { array in
                     array.shuffled()
@@ -236,6 +240,6 @@ extension CountryViewModel {
     }
 
     private func openResults() {
-        router.openResultsView(points: self.correctAnswersCounter, difficulty: difficulty, gameType: GameType.flagGame)
+        router.openResultsView(points: self.correctAnswersCounter, difficulty: difficulty, gameType: .countryGame)
     }
 }

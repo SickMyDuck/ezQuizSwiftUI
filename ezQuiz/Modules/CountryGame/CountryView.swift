@@ -14,13 +14,13 @@ struct CountryView: View {
     @ObservedObject var viewModel: CountryViewModel
 
     let columns = [
+        GridItem(.flexible()),
         GridItem(.flexible())
     ]
 
     var body: some View {
         ZStack{
             VStack {
-                Spacer()
                 HStack {
                     Text("Correct answers:  \(viewModel.correctAnswersCounter)")
                         .foregroundColor(.green)
@@ -34,33 +34,30 @@ struct CountryView: View {
 
                 TimerView(with: viewModel)
 
-                Image(uiImage: viewModel.flagImage)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: UIScreen.main.bounds.width, height: 265)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color.gray, lineWidth: 2)
-                    )
-                    .padding(.vertical, Paddings.medium)
+                Spacer()
+
+                Text(viewModel.country ?? "")
+                    .font(Fonts.italicBig)
 
                 Spacer()
 
                 LazyVGrid(columns: columns) {
-                    ForEach(viewModel.answers, id: \.self) { answer in
+                    ForEach($viewModel.answers, id: \.self) { answer in
                         Button(action: {
-                            viewModel.checkAnswer(answer)
+                            viewModel.checkAnswer(answer.answer.wrappedValue)
                         }) {
-                            Text(answer)
+                            Image(uiImage: answer.image.wrappedValue)
+                                .resizable()
+                                .scaledToFit()
                         }
                         .background(
-                            viewModel.getButtonColor(for: answer)
+                            viewModel.getButtonColor(for: answer.answer.wrappedValue)
                         )
                         .padding(.horizontal, Paddings.large)
                         .padding(.bottom, Paddings.medium)
                         .buttonStyle(MainButtonStyle())
-                        .disabled(viewModel.isAnswered || !viewModel.isButtonAvailable(for: answer))
-                        .opacity(viewModel.isButtonAvailable(for: answer) ? 1 : 0)
+                        .disabled(viewModel.isAnswered || !viewModel.isButtonAvailable(for: answer.answer.wrappedValue))
+                        .opacity(viewModel.isButtonAvailable(for: answer.answer.wrappedValue) ? 1 : 0)
                         .animation(viewModel.shouldAnimate ? .easeInOut(duration: 0.5) : .none)
                     }
                 }
