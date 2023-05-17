@@ -15,7 +15,7 @@
 		5902DF6629E16278005046C6 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5902DF6529E16278005046C6 /* Loader.swift */; };
 		5933D5CE2A09B854002AF912 /* CountryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933D5CD2A09B854002AF912 /* CountryViewModel.swift */; };
 		5933D5D02A09B86B002AF912 /* CountryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933D5CF2A09B86B002AF912 /* CountryView.swift */; };
-		5933D5D32A09BBED002AF912 /* GameLogicProtocol+GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933D5D22A09BBED002AF912 /* GameLogicProtocol+GameLogic.swift */; };
+		5933D5D32A09BBED002AF912 /* GameLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933D5D22A09BBED002AF912 /* GameLogic.swift */; };
 		5933D5D52A09C0CB002AF912 /* CountryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933D5D42A09C0CB002AF912 /* CountryRouter.swift */; };
 		5933D5D72A0A3BCF002AF912 /* CountryQuestionItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5933D5D62A0A3BCF002AF912 /* CountryQuestionItemModel.swift */; };
 		594EEB7629D636AE006F6AC7 /* MenuScreenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594EEB7529D636AE006F6AC7 /* MenuScreenTests.swift */; };
@@ -101,7 +101,7 @@
 		5902DF6529E16278005046C6 /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		5933D5CD2A09B854002AF912 /* CountryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewModel.swift; sourceTree = "<group>"; };
 		5933D5CF2A09B86B002AF912 /* CountryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryView.swift; sourceTree = "<group>"; };
-		5933D5D22A09BBED002AF912 /* GameLogicProtocol+GameLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameLogicProtocol+GameLogic.swift"; sourceTree = "<group>"; };
+		5933D5D22A09BBED002AF912 /* GameLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLogic.swift; sourceTree = "<group>"; };
 		5933D5D42A09C0CB002AF912 /* CountryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryRouter.swift; sourceTree = "<group>"; };
 		5933D5D62A0A3BCF002AF912 /* CountryQuestionItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryQuestionItemModel.swift; sourceTree = "<group>"; };
 		594EEB7529D636AE006F6AC7 /* MenuScreenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScreenTests.swift; sourceTree = "<group>"; };
@@ -247,7 +247,7 @@
 		5933D5D12A09BBD1002AF912 /* Game logic */ = {
 			isa = PBXGroup;
 			children = (
-				5933D5D22A09BBED002AF912 /* GameLogicProtocol+GameLogic.swift */,
+				5933D5D22A09BBED002AF912 /* GameLogic.swift */,
 			);
 			path = "Game logic";
 			sourceTree = "<group>";
@@ -769,7 +769,7 @@
 				597A098A2A0DA8C900EC36A3 /* CountryAnswer.swift in Sources */,
 				5902DF5E29E0D4AA005046C6 /* Colors.swift in Sources */,
 				59D90A8F29F35A1000CA80DD /* ProfileButtonStyle.swift in Sources */,
-				5933D5D32A09BBED002AF912 /* GameLogicProtocol+GameLogic.swift in Sources */,
+				5933D5D32A09BBED002AF912 /* GameLogic.swift in Sources */,
 				59AF97F829FF206E00FF25CF /* ResultsRouter.swift in Sources */,
 				59D82F6729EEE5DB009F72AF /* DifficultyView.swift in Sources */,
 				59D82F7629EF51BB009F72AF /* ProfileViewModel.swift in Sources */,
@@ -954,6 +954,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -968,7 +969,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"ezQuiz/Preview Content\"";
 				DEVELOPMENT_TEAM = GR3FLKSKAU;
 				ENABLE_PREVIEWS = YES;
@@ -985,11 +986,14 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = SeeqMyDuck.ezQuiz;
+				PRODUCT_BUNDLE_IDENTIFIER = SeeqMyDuck.ezFlags;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1000,7 +1004,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"ezQuiz/Preview Content\"";
 				DEVELOPMENT_TEAM = GR3FLKSKAU;
 				ENABLE_PREVIEWS = YES;
@@ -1017,11 +1021,14 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = SeeqMyDuck.ezQuiz;
+				PRODUCT_BUNDLE_IDENTIFIER = SeeqMyDuck.ezFlags;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

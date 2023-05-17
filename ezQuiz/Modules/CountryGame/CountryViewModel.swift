@@ -125,13 +125,13 @@ final class CountryViewModel: GameLogic, CountryViewModelProtocol {
     }
 
     private func loadImagesFromURLs(_ urls: [String]) {
-        var answers = [String]()
+        var answers: [String] = []
         let publishers = urls.map { answer in
             answers.append(answer)
             return imageLoader.loadImage(from: URL(string: "https://sickmyduck.ru/flag_images/\(answer)")!)
         }
         Publishers.Sequence(sequence: publishers)
-            .flatMap(maxPublishers: .max(10)) { $0 }
+            .flatMap(maxPublishers: .max(1)) { $0 }
             .collect()
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in

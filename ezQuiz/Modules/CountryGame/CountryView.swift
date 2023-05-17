@@ -98,7 +98,7 @@ struct CountryView: View {
             }
             )
             .sheet(isPresented: $viewModel.isInformationVisible) {
-                InformationView()
+                InformationView(gameType: .countryGame)
                     .preferredColorScheme(.dark)
                     .padding(Paddings.small)
             }

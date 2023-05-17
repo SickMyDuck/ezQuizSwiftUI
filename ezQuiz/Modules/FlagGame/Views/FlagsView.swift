@@ -103,7 +103,7 @@ struct FlagsView: View {
             }
             )
             .sheet(isPresented: $viewModel.isInformationVisible) {
-                InformationView()
+                InformationView(gameType: .flagGame)
                     .preferredColorScheme(.dark)
                     .padding(Paddings.small)
             }

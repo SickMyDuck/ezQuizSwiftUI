@@ -51,9 +51,9 @@ struct MenuView: View {
                         }
                         .sheet(isPresented: $viewModel.showAboutView) {
                             AboutView()
+                                .preferredColorScheme(.dark)
                         }
                         .padding(Paddings.small)
-                        .preferredColorScheme(.dark)
                     }
                 }
             }
